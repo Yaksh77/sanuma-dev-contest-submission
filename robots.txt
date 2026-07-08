@@ -1,0 +1,11 @@
+User-agent: *
+Allow: /
+
+# Disallow admin/server-side directories (none here, but future-proofed)
+Disallow: /assets/vendor/
+
+# Crawl delay recommendation
+Crawl-delay: 5
+
+# Sitemap
+Sitemap: https://sanuma.in/sitemap.xml

@@ -1,0 +1,34 @@
+<section class="section reveal-item" style="border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+  <div class="container">
+    <div class="card card--flagship" style="padding: var(--space-7); background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--surface-card) 100%);">
+      <div class="grid grid-cols-2 align-center">
+        <div>
+          <span class="section-tag" style="margin-bottom: var(--space-2);">Technical Updates</span>
+          <h3 style="font-size: var(--fs-700); margin-bottom: var(--space-2);">Subscribe to Sanuma TechNotes</h3>
+          <p style="margin-bottom: 0; max-width: 500px;">
+            Receive quarterly briefings from our engineering laboratory covering IoT telemetry setups, PLC program standards, and enterprise cloud scaling. Zero spam.
+          </p>
+        </div>
+        <div>
+          <form id="newsletter-subscription-form" class="flex flex-column" style="gap: var(--space-3);" novalidate>
+            <!-- Anti-spam Honeypot (A11y rule) -->
+            <div class="honeypot-field" aria-hidden="true">
+              <label for="newsletter-trap-field">Leave this field blank</label>
+              <input type="text" id="newsletter-trap-field" name="newsletter_trap_field" tabindex="-1" autocomplete="off">
+            </div>
+
+            <div class="form-group" style="margin-bottom: 0;">
+              <label for="newsletter-email" class="sr-only">Email Address</label>
+              <div class="footer-newsletter-form">
+                <input type="email" id="newsletter-email" name="email" class="form-input" placeholder="Enter your email address" required aria-label="Newsletter email input">
+                <div class="magnetic-btn-wrap">
+                  <button type="submit" class="btn btn--primary" aria-label="Subscribe to newsletter">Subscribe</button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
