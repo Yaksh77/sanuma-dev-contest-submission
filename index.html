@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sanuma India Pvt. Ltd. — Enterprise Automation & Software Engineering</title>
+  <meta name="description" content="Sanuma India Pvt. Ltd. delivers custom software development, industrial IoT automation, and predictive maintenance solutions for high-performance operations.">
+  <link rel="canonical" href="">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sanuma India Pvt. Ltd. — Enterprise Automation & Software Engineering">
+  <meta property="og:description" content="High-performance custom software engineering, PLC automation, and telemetry streaming solutions.">
+  <meta property="og:image" content="assets/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:title" content="Sanuma India Pvt. Ltd. — Enterprise Automation & Software Engineering">
+  <meta property="twitter:description" content="High-performance custom software engineering, PLC automation, and telemetry streaming solutions.">
+
+  <!-- Core Theme Initialization (Prevent FOIT) -->
+  <script>
+    (function () {
+      var THEME_KEY = 'sanuma-theme';
+      var saved = localStorage.getItem(THEME_KEY);
+      var theme = (saved === 'dark' || saved === 'light')
+        ? saved
+        : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#0A0A0A' : '#FFFFFF');
+    })();
+  </script>
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- Swiper and Vendor CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" onerror="this.onerror=null;this.href='assets/vendor/swiper-bundle.min.css';">
+  
+  <!-- CSS Design System -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/typography.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/themes.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/buttons.css">
+  <link rel="stylesheet" href="assets/css/cards.css">
+  <link rel="stylesheet" href="assets/css/forms.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body aria-busy="true">
+
+  <!-- Skip to Main Content (A11y Rule) -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Page Loader Screen -->
+  <div class="preloader" role="status" aria-label="Loading site components">
+    <div class="preloader-logo"><span class="logo-accent">S</span>ANUMA</div>
+    <div class="preloader-bar">
+      <div class="preloader-progress"></div>
+    </div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" role="region" aria-label="Announcement">
+    <span>Now hiring: Join our Summer 2026 Engineering Internship Pipeline.</span>
+    <a href="career.html" style="text-decoration: underline; color: var(--clr-white); font-weight: var(--fw-bold);" aria-label="View career openings">Apply Now</a>
+    <button class="announcement-close" aria-label="Close announcement bar">
+      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+    </button>
+  </div>
+
+  <!-- Sticky Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <!-- Logo -->
+      <a href="index.html" class="header-logo" aria-label="Sanuma Home">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--clr-green-brand)" />
+          <path d="M9 22V10L14 15L19 10V22" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>SANUMA<span class="logo-accent">.</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu-container" aria-label="Main navigation">
+        <ul class="nav-menu" role="list">
+          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          <li class="nav-item">
+            <a href="services.html" class="nav-link" aria-haspopup="true">Capabilities <svg style="width:10px;height:10px;fill:currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></a>
+            <ul class="nav-dropdown" role="list">
+              <li><a href="services.html" class="dropdown-link">All Services</a></li>
+              <li><a href="solutions.html" class="dropdown-link">Core Solutions</a></li>
+              <li><a href="industries.html" class="dropdown-link">Industries Served</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+          <li class="nav-item"><a href="blog.html" class="nav-link">Technical Blog</a></li>
+          <li class="nav-item"><a href="career.html" class="nav-link">Careers</a></li>
+          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Theme Switcher and Action -->
+      <div class="flex align-center" style="gap: var(--space-4);">
+        <button class="theme-toggle-btn" aria-label="Toggle theme mode">
+          <!-- Sun/Moon icons inside SVGs -->
+          <svg class="sun-icon" viewBox="0 0 24 24" style="display: var(--theme-sun-display, block);"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0s-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.01c.39-.39.39-1.03 0-1.41s-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/></svg>
+        </button>
+        <div class="magnetic-btn-wrap">
+          <a href="contact.html" class="btn btn--primary">Get In Touch</a>
+        </div>
+        <!-- Hamburger Menu -->
+        <button class="hamburger" aria-expanded="false" aria-label="Open navigation menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" aria-hidden="true">
+    <nav aria-label="Mobile navigation">
+      <ul class="mobile-menu" role="list">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="services.html" class="nav-link">Services</a></li>
+        <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+        <li><a href="industries.html" class="nav-link">Industries</a></li>
+        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
+        <li><a href="blog.html" class="nav-link">Technical Blog</a></li>
+        <li><a href="career.html" class="nav-link">Careers</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Main Content Area -->
+  <main id="main-content">
+    
+    <!-- Hero Section -->
+    <section class="hero-section" aria-label="Hero Showcase">
+      <div id="hero-canvas-container" class="hero-canvas" aria-hidden="true"></div>
+      <div class="swiper hero-slider">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <article class="swiper-slide hero-slide">
+            <div class="container hero-slide-content">
+              <div class="hero-content">
+                <span class="section-tag" style="color:var(--clr-green-neon);border-color:var(--accent-border)">Enterprise Engineering</span>
+                <h1 class="hero-title">High-Throughput Software Architecture</h1>
+                <p class="hero-subtitle">We engineer secure, cloud-native backend microservices designed to scale seamlessly to millions of transactions while maintaining sub-millisecond latencies.</p>
+                <div class="hero-actions">
+                  <div class="magnetic-btn-wrap"><a href="contact.html" class="btn btn--primary">Consult Specialist</a></div>
+                  <a href="solutions.html" class="btn btn--outline" style="color:white;border-color:white">Explore Platforms</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- Slide 2 -->
+          <article class="swiper-slide hero-slide">
+            <div class="container hero-slide-content">
+              <div class="hero-content">
+                <span class="section-tag" style="color:var(--clr-green-neon);border-color:var(--accent-border)">Industrial IoT</span>
+                <h2 class="hero-title" style="font-size: var(--fs-mega);">Smart Factory Control & SCADA</h2>
+                <p class="hero-subtitle">Connecting legacy factory-floor machinery to modern networks. Stream realtime sensor telemetries, monitor PLC cycles, and eliminate plant data silos.</p>
+                <div class="hero-actions">
+                  <div class="magnetic-btn-wrap"><a href="services.html" class="btn btn--primary">Our IoT Capabilities</a></div>
+                  <a href="portfolio.html" class="btn btn--outline" style="color:white;border-color:white">Case Studies</a>
+                </div>
+              </div>
+            </div>
+          </article>
+          <!-- Slide 3 -->
+          <article class="swiper-slide hero-slide">
+            <div class="container hero-slide-content">
+              <div class="hero-content">
+                <span class="section-tag" style="color:var(--clr-green-neon);border-color:var(--accent-border)">Predictive Systems</span>
+                <h2 class="hero-title" style="font-size: var(--fs-mega);">Prevent Breakdowns with Machine Learning</h2>
+                <p class="hero-subtitle">Implement machine-learning vibration models and thermal anomaly scanners to forecast mechanical hardware failures 48 hours before they interrupt lines.</p>
+                <div class="hero-actions">
+                  <div class="magnetic-btn-wrap"><a href="contact.html" class="btn btn--primary">Schedule Audit</a></div>
+                  <a href="blog.html" class="btn btn--outline" style="color:white;border-color:white">Read Research</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>       
+      </div>
+    </section>
+
+    <!-- Trusted Brands Logo Strip -->
+    <section class="trusted-brands section">
+    <div class="container">
+        <div class="section-heading text-center">
+            <span class="section-tag">
+                Trusted By Industry Leaders
+            </span>
+            <h2>
+                Companies & Technologies We Work With
+            </h2>
+            <p>
+                Trusted technologies powering modern digital experiences.
+            </p>
+        </div>
+    </div>
+    <div class="brands-marquee">
+    <div class="brands-track">
+      <div class="brand-card"><img src="assets/images/partners/google.svg" alt="Partner 1" loading="lazy" width="120" height="40"></div>
+      <div class="brand-card"><img src="assets/images/partners/microsoft.svg" alt="Partner 2" loading="lazy" width="120" height="40"></div>
+      <div class="brand-card"><img src="assets/images/partners/amazon.svg" alt="Partner 3" loading="lazy" width="120" height="40"></div>
+      <div class="brand-card"><img src="assets/images/partners/github.svg" alt="Partner 4" loading="lazy" width="120" height="40"></div>
+      <div class="brand-card"><img src="assets/images/partners/paypal.svg" alt="Partner 5" loading="lazy" width="120" height="40"></div>
+      <div class="brand-card"><img src="assets/images/partners/linkedin.svg" alt="Partner 6" loading="lazy" width="120" height="40"></div>
+      <div class="brand-card"><img src="assets/images/partners/mastercard.svg" alt="Partner 7" loading="lazy" width="120" height="40"></div>
+      <div class="brand-card"><img src="assets/images/partners/slack.svg" alt="Partner 8" loading="lazy" width="120" height="40"></div>
+      <div class="brand-card"><img src="assets/images/partners/visa.svg" alt="Partner 9" loading="lazy" width="120" height="40"></div>
+      <div class="brand-card"><img src="assets/images/partners/vercel.svg" alt="Partner 10" loading="lazy" width="120" height="40"></div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Company teaser -->
+    <section class="section reveal-item">
+      <div class="container grid grid-cols-2 align-center">
+        <div>
+          <span class="section-tag">Corporate Profile</span>
+          <h2 class="text-gradient">We Architect Robust Industrial Systems</h2>
+          <p>Sanuma India Pvt. Ltd. is a premium technical partner for modern manufacturers. We build robust systems that span electrical control panel wiring, PLC software automation, telemetry integrations, and web-scale cloud systems.</p>
+          <p>Unlike agency teams focused solely on web templates, our engineers hold deep capabilities in operational technologies (OT) and information technologies (IT) alike. We write code that controls physical operations with absolute safety and reliability.</p>
+          <a href="about.html" class="card-link mt-4" style="display:inline-flex">Learn about our history <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z"/></svg></a>
+        </div>
+        <div style="background-color: var(--bg-secondary); padding: var(--space-6); border-radius: var(--radius-xl); border:1px solid var(--border-color)">
+          <h3 style="font-size:var(--fs-500); margin-bottom: var(--space-4);">The Sanuma Advantage</h3>
+          <ul style="display:flex; flex-direction:column; gap: var(--space-4);">
+            <li style="display:flex; gap: var(--space-3); align-items:flex-start;">
+              <span style="color:var(--accent); font-weight:var(--fw-bold)">✓</span>
+              <div>
+                <strong>Unified OT-IT Integration</strong>
+                <p style="margin-bottom:0; font-size:var(--fs-200);">Direct data pipes from hardware registers (Modbus/OPC-UA) to PostgreSQL/Redis clusters.</p>
+              </div>
+            </li>
+            <li style="display:flex; gap: var(--space-3); align-items:flex-start;">
+              <span style="color:var(--accent); font-weight:var(--fw-bold)">✓</span>
+              <div>
+                <strong>Zero Cumulative Layout Shifts</strong>
+                <p style="margin-bottom:0; font-size:var(--fs-200);">Our sites are architected strictly to avoid reflow spikes, scoring 100 on Core Web Vitals audits.</p>
+              </div>
+            </li>
+            <li style="display:flex; gap: var(--space-3); align-items:flex-start;">
+              <span style="color:var(--accent); font-weight:var(--fw-bold)">✓</span>
+              <div>
+                <strong>WCAG 2.2 AAA Color Contrast</strong>
+                <p style="margin-bottom:0; font-size:var(--fs-200);">Fully keyboard-navigable overlays, skip points, and high contrast ratios across light and dark frames.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="section bg-secondary reveal-item">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number" data-counter="8" data-suffix="+">0</div>
+            <div class="stat-label">Years of Operations</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-counter="140" data-suffix="+">0</div>
+            <div class="stat-label">Systems Delivered</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-counter="99" data-suffix=".9%">0</div>
+            <div class="stat-label">SLA Uptime Scopes</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number" data-counter="35" data-suffix="">0</div>
+            <div class="stat-label">Specialist Engineers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid teaser -->
+    <section class="section reveal-item">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Core Offerings</span>
+          <h2>Our Core Capabilities</h2>
+          <p>We deploy high-quality engineering teams across four disciplines to design, build, and audit your technical systems.</p>
+        </div>
+        
+        <div class="grid grid-cols-4">
+          <!-- Service Card 1 -->
+          <div class="card card--service">
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+            </div>
+            <h3 class="card-title">Industrial IoT</h3>
+            <p>Direct sensor instrumentation, edge aggregations, and visual SCADA consoles displaying immediate plant-floor analytics.</p>
+            <a href="services.html#industrial-iot" class="card-link" aria-label="Learn about Industrial IoT">View Details <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z"/></svg></a>
+          </div>
+          <!-- Service Card 2 -->
+          <div class="card card--service">
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+            </div>
+            <h3 class="card-title">Custom Software</h3>
+            <p>Robust cloud-native backends, custom dashboard interfaces, database integrations, and automated pipelines.</p>
+            <a href="services.html#enterprise-software" class="card-link" aria-label="Learn about Custom Software">View Details <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z"/></svg></a>
+          </div>
+          <!-- Service Card 3 -->
+          <div class="card card--service">
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+            </div>
+            <h3 class="card-title">Control PLC</h3>
+            <p>PLC diagnostics logic, HMI custom panels setups, wiring loops audits, and hardware installations.</p>
+            <a href="services.html#control-systems" class="card-link" aria-label="Learn about Control PLCs">View Details <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z"/></svg></a>
+          </div>
+          <!-- Service Card 4 -->
+          <div class="card card--service">
+            <div class="card-icon-wrap">
+              <svg viewBox="0 0 24 24"><path d="M21 3H3c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-2 16H5V7h14v12zm-4-9h-2V8h2v2zm0 4h-2v-2h2v2zm-4-4H9V8h2v2zm0 4H9v-2h2v2z"/></svg>
+            </div>
+            <h3 class="card-title">ML Systems</h3>
+            <p>Predictive maintenance algorithm templates, motor vibration audits, anomaly logging, and alerts.</p>
+            <a href="services.html#predictive-maintenance" class="card-link" aria-label="Learn about ML Systems">View Details <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z"/></svg></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="section bg-secondary reveal-item">
+      <div class="container">
+        <div class="section-header center">
+          <span class="section-tag">Our Workflow</span>
+          <h2>The Integration Timeline</h2>
+          <p>From compliance audits to continuous operations maintenance, explore our structural steps of engagement.</p>
+        </div>
+        
+        <div class="timeline-flow">
+          <div class="timeline-grid">
+            <div class="timeline-step">
+              <div class="step-number">01</div>
+              <h3 style="font-size:var(--fs-300);">Telemetry Audit</h3>
+              <p style="font-size:var(--fs-200); margin-bottom:0;">On-site analysis of instrumentation loops and factory network boundaries.</p>
+            </div>
+            <div class="timeline-step">
+              <div class="step-number">02</div>
+              <h3 style="font-size:var(--fs-300);">System Engineering</h3>
+              <p style="font-size:var(--fs-200); margin-bottom:0;">Prototyping PLC communication loops and architecting cloud gateways.</p>
+            </div>
+            <div class="timeline-step">
+              <div class="step-number">03</div>
+              <h3 style="font-size:var(--fs-300);">Commissioning</h3>
+              <p style="font-size:var(--fs-200); margin-bottom:0;">Integrating SCADA control overlays, electrical panels, and database systems.</p>
+            </div>
+            <div class="timeline-step">
+              <div class="step-number">04</div>
+              <h3 style="font-size:var(--fs-300);">Continuous SLA</h3>
+              <p style="font-size:var(--fs-200); margin-bottom:0;">Continuous telemetry surveillance, alarm monitoring, and custom scaling.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Case Studies & Portfolio snippet -->
+    <section class="section reveal-item">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Flagship Deployments</span>
+          <h2>Proven Engineering Success</h2>
+          <p>Read about actual custom platforms we've deployed to optimize manufacturing outputs and data flows.</p>
+        </div>
+        
+        <div class="grid grid-cols-3">
+          <!-- Case Study Card 1 -->
+          <div class="card card--blog">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&auto=format&fit=crop&q=60" alt="Telemetry assembly floor" loading="lazy">
+              <span class="card-badge">Automotive</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Vikas Components</span> • <span>IoT Integration</span>
+              </div>
+              <h3 style="font-size: var(--fs-400); margin-bottom: var(--space-3);">Digitizing Assembly Floor Telemetries via OPC-UA</h3>
+              <p style="font-size: var(--fs-200);">How we aggregated telemetry registers across 40+ legacy Siemens PLCs onto a centralized MQTT broker, improving visibility by 30%.</p>
+              <a href="case-study.html" class="card-link mt-4" style="display:inline-flex">Read Case Study <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z"/></svg></a>
+            </div>
+          </div>
+
+          <!-- Case Study Card 2 -->
+          <div class="card card--blog">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=60" alt="Server clusters rack" loading="lazy">
+              <span class="card-badge">Logistics</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Kalyani Logistics</span> • <span>Cloud Systems</span>
+              </div>
+              <h3 style="font-size: var(--fs-400); margin-bottom: var(--space-3);">Scaling Custom Order Portals for p99 Stability</h3>
+              <p style="font-size: var(--fs-200);">Designing a Redis-cached boundary pipeline with asynchronous Kafka processing blocks to handle spikes of 25,000 requests/min.</p>
+              <a href="portfolio.html" class="card-link mt-4" style="display:inline-flex">Read Case Study <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z"/></svg></a>
+            </div>
+          </div>
+
+          <!-- Case Study Card 3 -->
+          <div class="card card--blog">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=600&auto=format&fit=crop&q=60" alt="Motor vibration testing" loading="lazy">
+              <span class="card-badge">Steel Processing</span>
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Aura Steel</span> • <span>Predictive AI</span>
+              </div>
+              <h3 style="font-size: var(--fs-400); margin-bottom: var(--space-3);">Thermal Anomaly Forecasting on Rotary Bearing Fans</h3>
+              <p style="font-size: var(--fs-200);">Deploying vibration monitoring models to calculate bearings Remaining Useful Life, preventing major equipment outages.</p>
+              <a href="portfolio.html" class="card-link mt-4" style="display:inline-flex">Read Case Study <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z"/></svg></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials subcomponent include wrapper -->
+    <div data-include="assets/components/testimonial.html"></div>
+
+    <!-- Accordion FAQs subcomponent include wrapper -->
+    <div data-include="assets/components/faq.html"></div>
+
+    <!-- Newsletter subcomponent include wrapper -->
+    <div data-include="assets/components/newsletter.html"></div>
+
+    <!-- CTA subcomponent include wrapper -->
+    <div data-include="assets/components/cta.html"></div>
+
+  </main>
+
+  <!-- Sticky Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <!-- Column 1: Brand details -->
+      <div class="footer-col-brand">
+        <a href="index.html" class="header-logo" style="margin-bottom: var(--space-2);" aria-label="Sanuma Home">
+          <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="2" y="2" width="28" height="28" rx="6" fill="var(--clr-green-brand)" />
+            <path d="M9 22V10L14 15L19 10V22" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span style="color:var(--text-primary);">SANUMA<span class="logo-accent">.</span></span>
+        </a>
+        <p class="footer-description">
+          Premium industrial OT engineering and high-throughput IT software architecture integration. Delivering certified reliability since 2018.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="social-link" aria-label="Sanuma on LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Sanuma on GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Navigation Links -->
+      <div>
+        <h4 class="footer-col-title">Navigation</h4>
+        <ul class="footer-links-list" role="list">
+          <li><a href="index.html" class="footer-link">Home</a></li>
+          <li><a href="about.html" class="footer-link">About Company</a></li>
+          <li><a href="services.html" class="footer-link">Core Services</a></li>
+          <li><a href="solutions.html" class="footer-link">Outcome Platforms</a></li>
+          <li><a href="portfolio.html" class="footer-link">Success Stories</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Industries Links -->
+      <div>
+        <h4 class="footer-col-title">Industries</h4>
+        <ul class="footer-links-list" role="list">
+          <li><a href="industries.html#automotive" class="footer-link">Automotive</a></li>
+          <li><a href="industries.html#logistics" class="footer-link">Logistics</a></li>
+          <li><a href="industries.html#steel" class="footer-link">Steel Processing</a></li>
+          <li><a href="industries.html#energy" class="footer-link">Energy Utilities</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Contact details -->
+      <div>
+        <h4 class="footer-col-title">Offices</h4>
+        <div class="footer-contact-info">
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+            <span>Navi Mumbai, MH, IN</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            <span>info@sanuma.in</span>
+          </div>
+          <div class="footer-contact-item">
+            <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.15 15.15 0 0 0 6.5 6.5l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+            <span>+91-99999-88888</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Column 5: Legal & Brief details -->
+      <div>
+        <h4 class="footer-col-title">Verify Submission</h4>
+        <ul class="footer-links-list" role="list">
+          <li><a href="career.html" class="footer-link">Active Vacancies</a></li>
+          <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
+          <li><a href="terms.html" class="footer-link">Terms & Conditions</a></li>
+          <li><a href="sitemap.xml" class="footer-link">XML Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Copyright -->
+    <div class="container footer-bottom">
+      <span>© 2026 Sanuma India Pvt. Ltd. All rights reserved. Registered under MCA guidelines.</span>
+      <div class="footer-bottom-links">
+        <a href="privacy-policy.html" class="footer-bottom-link">Privacy</a>
+        <span>•</span>
+        <a href="terms.html" class="footer-bottom-link">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button class="back-to-top" aria-label="Scroll back to top of the page">
+    <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg>
+  </button>
+
+  <!-- Custom Cursor follower overlays -->
+  <div class="custom-cursor" aria-hidden="true"></div>
+  <div class="custom-cursor-follower" aria-hidden="true"></div>
+
+  <!-- CDN scripts with pinned versions and local vendor fallbacks -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" onerror="this.onerror=null;this.src='assets/vendor/three.min.js';"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" onerror="this.onerror=null;this.src='assets/vendor/gsap.min.js';"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" onerror="this.onerror=null;this.src='assets/vendor/swiper-bundle.min.js';"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js" onerror="this.onerror=null;this.src='assets/vendor/lenis.min.js';"></script>
+
+  <!-- Application Bootstrap Entrypoint -->
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+</html>

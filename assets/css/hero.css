@@ -1,0 +1,32 @@
+/* Hero slide animations and layer definitions */
+
+.hero-slide-content {
+  position: relative;
+  z-index: 5;
+  padding-left: var(--space-4);
+  padding-right: var(--space-4);
+}
+
+.hero-slide.swiper-slide-active .hero-title {
+  animation: slideUpFade 0.8s forwards cubic-bezier(0.25, 1, 0.5, 1) 0.2s;
+}
+
+.hero-slide.swiper-slide-active .hero-subtitle {
+  animation: slideUpFade 0.8s forwards cubic-bezier(0.25, 1, 0.5, 1) 0.4s;
+}
+
+.hero-slide.swiper-slide-active .hero-actions {
+  animation: slideUpFade 0.8s forwards cubic-bezier(0.25, 1, 0.5, 1) 0.6s;
+}
+
+.hero-title, .hero-subtitle, .hero-actions {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@keyframes slideUpFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

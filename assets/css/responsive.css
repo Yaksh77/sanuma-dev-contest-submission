@@ -1,0 +1,65 @@
+/* Responsive final overrides (loaded last in CSS chain) */
+
+/* Tiny Mobile Screens (< 375px) */
+@media (max-width: 375px) {
+  :root {
+    --fs-mega: 2.8rem;
+    --fs-900: 2.4rem;
+    --fs-800: 2.0rem;
+    --fs-700: 1.7rem;
+  }
+  
+  .container {
+    padding-left: var(--space-3);
+    padding-right: var(--space-3);
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .hero-actions .btn {
+    width: 100%;
+  }
+}
+
+/* Medium Tablets & Mobile Landscape (< 768px) */
+@media (max-width: 768px) {
+  .section {
+    padding-top: var(--space-7);
+    padding-bottom: var(--space-7);
+  }
+  
+  .section-lg {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-8);
+  }
+}
+
+/* Landscape Tablet / Netbooks (992px to 1024px) */
+@media (min-width: 993px) and (max-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+/* Large Desktop Screens (> 1440px) */
+@media (min-width: 1440px) {
+  :root {
+    --container-max-width: 1400px;
+  }
+}
+
+/* Accessibility Reduced Motion Rule overrides */
+@media (prefers-reduced-motion: reduce) {
+  .preloader-progress {
+    animation: none !important;
+    width: 100% !important;
+  }
+  
+  .swiper-pagination-bullet-active {
+    width: 12px !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,131 @@
+/* Form Styles */
+.form-group {
+  margin-bottom: var(--space-5);
+  position: relative;
+}
+
+.form-label {
+  display: block;
+  font-family: var(--ff-display);
+  font-size: var(--fs-200);
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--ff-body);
+  font-size: var(--fs-300);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.form-input:hover,
+.form-textarea:hover,
+.form-select:hover {
+  border-color: var(--accent-border);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--accent-glow);
+  background-color: var(--bg-primary);
+}
+
+.form-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Validation States */
+.form-group.has-error .form-input,
+.form-group.has-error .form-textarea {
+  border-color: #D32F2F;
+}
+
+.form-group.has-error .form-input:focus,
+.form-group.has-error .form-textarea:focus {
+  box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.2);
+}
+
+.form-group.has-success .form-input,
+.form-group.has-success .form-textarea {
+  border-color: var(--accent);
+}
+
+/* Error Label */
+.form-error {
+  display: block;
+  font-size: var(--fs-100);
+  color: #D32F2F;
+  margin-top: var(--space-2);
+  font-family: var(--ff-body);
+}
+
+/* Honeypot Spam Trap (Visually completely hidden but crawlable/fillable by bots) */
+.honeypot-field {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  pointer-events: none;
+}
+
+/* Two-column form row */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+}
+
+@media (max-width: 600px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+/* Contact form wrapper */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Form success / error messages */
+.form-success-msg {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: var(--clr-green-soft-tint, rgba(0,201,122,0.08));
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+  padding: var(--space-4) var(--space-5);
+  margin-top: var(--space-4);
+  font-size: var(--fs-300);
+  color: var(--text-primary);
+}
+
+.form-success-msg p { margin: 0; }
+
+/* Select element reset for themes */
+select.form-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 24 24'%3E%3Cpath fill='%23888' d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right var(--space-4) center;
+  padding-right: var(--space-7);
+  cursor: pointer;
+}
+
