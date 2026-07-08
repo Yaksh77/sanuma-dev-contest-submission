@@ -1,0 +1,110 @@
+:root {
+  /* Typography Families */
+  --ff-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ff-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Typography Font Size Scale (Modular Scale 1.25) */
+  --fs-100: 0.8rem;
+  --fs-200: 0.9rem;
+  --fs-300: 1rem;       /* Base (16px) */
+  --fs-400: 1.25rem;    /* H6 */
+  --fs-500: 1.563rem;   /* H5 */
+  --fs-600: 1.953rem;   /* H4 */
+  --fs-700: 2.441rem;   /* H3 */
+  --fs-800: 3.052rem;   /* H2 */
+  --fs-900: 3.815rem;   /* H1 */
+  --fs-mega: 4.768rem;  /* Hero large display */
+
+  /* Font Weights */
+  --fw-light: 300;
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+  --fw-extrabold: 800;
+
+  /* Spacing Scale (8px Grid) */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.5rem;   /* 24px */
+  --space-6: 2rem;     /* 32px */
+  --space-7: 3rem;     /* 48px */
+  --space-8: 4rem;     /* 64px */
+  --space-9: 6rem;     /* 96px */
+  --space-10: 8rem;    /* 128px */
+
+  /* Grid Layout Options */
+  --container-max-width: 1280px;
+  --grid-gap: var(--space-6);
+
+  /* Border Radii */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-pill: 9999px;
+
+  /* Shadows (Premium & Soft) */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 24px var(--accent-glow);
+
+  /* Z-Index Hierarchy */
+  --zi-background: -10;
+  --zi-base: 1;
+  --zi-card-hover: 10;
+  --zi-sticky: 100;
+  --zi-overlay: 900;
+  --zi-modal: 1000;
+  --zi-cursor: 9999;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Brand Canonical Color Palette */
+  --clr-black: #0A0A0A;
+  --clr-white: #FFFFFF;
+  
+  --clr-green-brand: #0F9D58;
+  --clr-green-neon: #00C97A;
+  --clr-green-neon-hover: #00B26C;
+  --clr-green-soft-tint: rgba(15, 157, 88, 0.22);
+  
+  --clr-dark-100: #121212;
+  --clr-dark-200: #1E1E1E;
+  --clr-dark-300: #2A2A2A;
+  
+  --clr-light-100: #F4F6F5;
+  --clr-light-200: #EAEAEA;
+  --clr-light-300: #DDDDDD;
+
+  /* Theme-Dependent Mappings (Default: Light Theme) */
+  --bg-primary: var(--clr-white);
+  --bg-secondary: var(--clr-light-100);
+  --bg-tertiary: var(--clr-light-200);
+  --text-primary: var(--clr-dark-100);
+  --text-secondary: #555555;
+  --text-muted: #888888;
+  
+  --accent: var(--clr-green-brand);
+  --accent-hover: var(--clr-green-neon);
+  --accent-glow: rgba(15, 157, 88, 0.2);
+  --accent-border: rgba(15, 157, 88, 0.15);
+  
+  --border-color: rgba(0, 0, 0, 0.08);
+  --surface-card: rgba(255, 255, 255, 0.85);
+  --backdrop-blur: 16px;
+  
+  --cursor-color: var(--clr-green-brand);
+
+  --hero-bg: linear-gradient(135deg, var(--clr-white) 0%, var(--clr-green-soft-tint) 55%, var(--clr-light-100) 100%);
+  --hero-text: var(--clr-dark-100);
+  --hero-text-subtle: rgba(30, 30, 30, 0.75);
+  --hero-nav-bg: rgba(255, 255, 255, 0.6);
+  --hero-nav-border: rgba(0, 0, 0, 0.12);
+}
