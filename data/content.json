@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Homepage",
+    "description": "Industrial IoT integration, control systems engineering, and custom software development solutions by Sanuma India.",
+    "url": "index.html",
+    "tags": ["home", "sanuma", "industrial iot", "automation", "software"]
+  },
+  {
+    "title": "About Us",
+    "description": "Learn about Sanuma India, our mission, core values, founding timeline, and leadership team.",
+    "url": "about.html",
+    "tags": ["about", "company", "team", "values", "history"]
+  },
+  {
+    "title": "Services",
+    "description": "Explore our full capabilities: custom software engineering, PLC programming, predictive maintenance, and IoT solutions.",
+    "url": "services.html",
+    "tags": ["services", "capabilities", "plc", "scada", "software", "iot"]
+  },
+  {
+    "title": "Industries",
+    "description": "Vertical-specific industrial engineering solutions for automotive, logistics, steel processing, and energy utilities.",
+    "url": "industries.html",
+    "tags": ["industries", "automotive", "steel", "logistics", "energy", "verticals"]
+  },
+  {
+    "title": "Solutions",
+    "description": "Outcome-based technological platforms combining custom software, hardware integration, and telemetry streaming.",
+    "url": "solutions.html",
+    "tags": ["solutions", "platforms", "integration", "outcomes"]
+  },
+  {
+    "title": "Portfolio",
+    "description": "Browse our successfully delivered automation projects, cloud infrastructures, and engineering case studies.",
+    "url": "portfolio.html",
+    "tags": ["portfolio", "projects", "delivered", "cases", "engineering"]
+  },
+  {
+    "title": "Case Study Detail",
+    "description": "In-depth review of how we digitized manufacturing operations and improved lines efficiency at Vikas Automotive.",
+    "url": "case-study.html",
+    "tags": ["case study", "vikas", "automotive", "results", "telemetry"]
+  },
+  {
+    "title": "Technical Blog",
+    "description": "In-depth articles covering OPC-UA, microservices scaling, control loop design, and predictive maintenance technologies.",
+    "url": "blog.html",
+    "tags": ["blog", "news", "articles", "opc-ua", "microservices", "telemetry"]
+  },
+  {
+    "title": "Careers",
+    "description": "Join the engineering team at Sanuma. View active vacancies, internship pipelines, and learn about our engineering culture.",
+    "url": "career.html",
+    "tags": ["careers", "jobs", "hiring", "internship", "openings", "join"]
+  },
+  {
+    "title": "Contact Us",
+    "description": "Get in touch with Sanuma India. Office addresses, telephone contacts, and secure project inquiry forms.",
+    "url": "contact.html",
+    "tags": ["contact", "inquiry", "email", "address", "phone", "support"]
+  }
+]

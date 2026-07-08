@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Rajesh Kumar",
+    "role": "Director of Manufacturing Operations",
+    "company": "Vikas Automotive Components",
+    "rating": 5,
+    "avatar": "https://randomuser.me/api/portraits/men/32.jpg",
+    "quote": "Sanuma's team completely digitized our assembly floor tracking. The OPC-UA telemetry system they deployed has given us unprecedented visibility into bottleneck cycles, improving our line throughput by 14%."
+  },
+  {
+    "name": "Ananya Sharma",
+    "role": "VP of Technology & Enterprise Systems",
+    "company": "Kalyani Logistics",
+    "rating": 5,
+    "avatar": "https://randomuser.me/api/portraits/women/44.jpg",
+    "quote": "Our legacy databases were highly siloed. Sanuma built a secure, centralized cloud portal that connects our warehousing operations with our finance pipelines. Their code is exceptionally clean."
+  },
+  {
+    "name": "David Miller",
+    "role": "Plant Engineering Lead",
+    "company": "Aura Steel & Processing",
+    "rating": 4,
+    "avatar": "https://randomuser.me/api/portraits/men/81.jpg",
+    "quote": "The predictive maintenance algorithms they implemented on our rotary fans saved us from a major unscheduled outage. We received a thermal overload alert 48 hours before physical failure occurred."
+  }
+]

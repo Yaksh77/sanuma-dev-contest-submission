@@ -1,0 +1,59 @@
+[
+  {
+    "id": "demystifying-opc-ua-industrial-iot",
+    "title": "Demystifying OPC-UA in Industrial IoT Systems",
+    "category": "Industrial Automation",
+    "date": "May 14, 2026",
+    "readTime": "6 min read",
+    "author": {
+      "name": "Amit Trivedi",
+      "role": "Lead Automation Engineer"
+    },
+    "thumbnail": "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&auto=format&fit=crop&q=60",
+    "excerpt": "OPC-UA has become the gold standard for industrial communications. Here, we break down how it solves legacy device interoperability and data security on the factory floor.",
+    "tags": ["OPC-UA", "IIoT", "SCADA", "Automation"],
+    "content": [
+      "For decades, the manufacturing sector has been bogged down by proprietary protocols. Siemens machines couldn't talk to Allen-Bradley controllers, and both required expensive custom drivers to communicate with high-level software. OPC Unified Architecture (OPC-UA) changes this entirely.",
+      "At its core, OPC-UA is a platform-independent, service-oriented architecture that integrates all the functionality of individual legacy OPC protocols into a single, cohesive framework. Rather than mapping raw registers, it allows devices to model rich information structures.",
+      "Furthermore, OPC-UA builds security directly into the protocol. It handles digital certificates, encryption (signing and signing-encrypting modes), and user authentication at the connection level, making it safe to transmit data across the corporate LAN or up to cloud storage systems."
+    ]
+  },
+  {
+    "id": "scaling-microservices-predictable-latency",
+    "title": "Scaling Microservices with Predictable Latency",
+    "category": "Software Engineering",
+    "date": "June 02, 2026",
+    "readTime": "8 min read",
+    "author": {
+      "name": "Siddharth Sen",
+      "role": "Principal Software Architect"
+    },
+    "thumbnail": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=60",
+    "excerpt": "Architecting systems for millions of operations requires managing tail latencies. Explore concrete strategies using message queueing and structured in-memory caching.",
+    "tags": ["Microservices", "System Design", "Caching", "Scale"],
+    "content": [
+      "In high-traffic systems, average response times can be deceptive. A system with a 20ms median latency can still experience seconds of lag for the 99th percentile (p99). When multiple microservices chain together, these tail latencies multiply rapidly.",
+      "To combat tail latency, architectures must decouple write operations using distributed message queues like Kafka or RabbitMQ. By processing updates asynchronously, the front-facing web handler returns status instantly, shielding the client from db locking delays.",
+      "Additionally, aggressively implementing caching at the boundary levels (using Redis clusters with smart invalidation policies) intercepts queries before they stress underlying database schemas, maintaining predictable response cycles."
+    ]
+  },
+  {
+    "id": "predictive-maintenance-factory-floor",
+    "title": "Implementing Predictive Maintenance on the Factory Floor",
+    "category": "AI & Robotics",
+    "date": "June 18, 2026",
+    "readTime": "5 min read",
+    "author": {
+      "name": "Dr. Meera Nair",
+      "role": "Director of AI Systems"
+    },
+    "thumbnail": "https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=600&auto=format&fit=crop&q=60",
+    "excerpt": "A practical guide to deploying anomaly detection algorithms using low-cost vibration sensors and cloud telemetry streaming.",
+    "tags": ["AI", "Predictive Maintenance", "Sensors", "Machine Learning"],
+    "content": [
+      "Unscheduled machine failures cost the global manufacturing sector billions of dollars annually. While traditional preventative maintenance works on fixed timetables, predictive maintenance uses actual telemetry data to schedule service only when needed.",
+      "The first step of deployment is establishing a baseline. By mounting high-frequency accelerometers to bearing housings, we capture vibration profiles under normal operating conditions. Anomalies represent deviations from this signature.",
+      "We stream sensor outputs to cloud endpoints, where machine learning algorithms evaluate statistical features (such as Root Mean Square and Kurtosis) to detect bearing wear weeks before catastrophic mechanical failure occurs."
+    ]
+  }
+]
