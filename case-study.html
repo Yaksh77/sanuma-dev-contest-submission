@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Case Study: OPC-UA Floor Telemetry — Sanuma India Pvt. Ltd.</title>
-  <meta name="description" content="How Sanuma India digitized assembly floor operations at Vikas Automotive Components using OPC-UA telemetry aggregation, improving line throughput by 14%.">
+  <meta name="description"
+    content="How Sanuma India digitized assembly floor operations at Vikas Automotive Components using OPC-UA telemetry aggregation, improving line throughput by 14%.">
   <link rel="canonical" href="">
   <meta property="og:type" content="article">
   <meta property="og:title" content="Case Study: OPC-UA Floor Telemetry Aggregation — Sanuma India">
-  <meta property="og:description" content="Routing 40 PLC registries into a centralized MQTT broker, achieving 14% cycle throughput improvement for Vikas Automotive.">
+  <meta property="og:description"
+    content="Routing 40 PLC registries into a centralized MQTT broker, achieving 14% cycle throughput improvement for Vikas Automotive.">
 
   <script>
     (function () {
@@ -26,7 +29,8 @@
     })();
   </script>
   <meta name="theme-color" content="#FFFFFF">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" onerror="this.onerror=null;this.href='assets/vendor/swiper-bundle.min.css';">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    onerror="this.onerror=null;this.href='assets/vendor/swiper-bundle.min.css';">
   <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/typography.css">
@@ -42,57 +46,30 @@
   <link rel="stylesheet" href="assets/css/sections.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
+
 <body aria-busy="true">
   <a href="#main-content" class="skip-to-content">Skip to main content</a>
   <div class="scroll-progress-bar" aria-hidden="true"></div>
   <div class="preloader" role="status" aria-label="Loading">
     <div class="preloader-logo"><span class="logo-accent">S</span>ANUMA</div>
-    <div class="preloader-bar"><div class="preloader-progress"></div></div>
+    <div class="preloader-bar">
+      <div class="preloader-progress"></div>
+    </div>
   </div>
 
   <div class="announcement-bar" role="region" aria-label="Announcement">
     <span>Now hiring: Join our Summer 2026 Engineering Internship Pipeline.</span>
-    <a href="career.html" style="text-decoration:underline;color:var(--clr-white);font-weight:var(--fw-bold)">Apply Now</a>
+    <a href="career.html" style="text-decoration:underline;color:var(--clr-white);font-weight:var(--fw-bold)">Apply
+      Now</a>
     <button class="announcement-close" aria-label="Close announcement bar">
-      <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+      </svg>
     </button>
   </div>
 
-  <header class="site-header">
-    <div class="container header-container">
-      <a href="index.html" class="header-logo" aria-label="Sanuma Home">
-        <svg viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="6" fill="var(--clr-green-brand)"/><path d="M9 22V10L14 15L19 10V22" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <span>SANUMA<span class="logo-accent">.</span></span>
-      </a>
-      <nav class="nav-menu-container" aria-label="Main navigation">
-        <ul class="nav-menu" role="list">
-          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-          <li class="nav-item">
-            <a href="services.html" class="nav-link" aria-haspopup="true">Capabilities <svg style="width:10px;height:10px;fill:currentColor" viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></a>
-            <ul class="nav-dropdown" role="list">
-              <li><a href="services.html" class="dropdown-link">All Services</a></li>
-              <li><a href="solutions.html" class="dropdown-link">Core Solutions</a></li>
-              <li><a href="industries.html" class="dropdown-link">Industries Served</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-          <li class="nav-item"><a href="blog.html" class="nav-link">Technical Blog</a></li>
-          <li class="nav-item"><a href="career.html" class="nav-link">Careers</a></li>
-          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="flex align-center" style="gap:var(--space-4)">
-        <button class="theme-toggle-btn" aria-label="Toggle theme mode">
-          <svg viewBox="0 0 24 24"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1z"/></svg>
-        </button>
-        <div class="magnetic-btn-wrap"><a href="contact.html" class="btn btn--primary">Get In Touch</a></div>
-        <button class="hamburger" aria-expanded="false" aria-label="Open navigation menu">
-          <span class="hamburger-line"></span><span class="hamburger-line"></span><span class="hamburger-line"></span>
-        </button>
-      </div>
-    </div>
-  </header>
+  <div data-include="assets/components/header.html"></div>
 
   <div class="mobile-nav-overlay" aria-hidden="true">
     <nav aria-label="Mobile navigation">
@@ -129,14 +106,19 @@
           <span class="section-tag">Automotive</span>
           <span class="section-tag" style="background:transparent;">Industrial IoT</span>
         </div>
-        <h1 style="max-width:800px; margin-bottom:var(--space-4)">Digitizing Assembly Floor Telemetries at Vikas Automotive via OPC-UA</h1>
-        <div style="display:flex; gap:var(--space-6); flex-wrap:wrap; font-size:var(--fs-200); color:var(--text-muted); margin-bottom:var(--space-6);">
+        <h1 style="max-width:800px; margin-bottom:var(--space-4)">Digitizing Assembly Floor Telemetries at Vikas
+          Automotive via OPC-UA</h1>
+        <div
+          style="display:flex; gap:var(--space-6); flex-wrap:wrap; font-size:var(--fs-200); color:var(--text-muted); margin-bottom:var(--space-6);">
           <span><strong style="color:var(--text-primary)">Client:</strong> Vikas Automotive Components Pvt. Ltd.</span>
           <span><strong style="color:var(--text-primary)">Duration:</strong> 14 weeks</span>
           <span><strong style="color:var(--text-primary)">Scope:</strong> 40 PLC nodes, 3 production lines</span>
           <span><strong style="color:var(--text-primary)">Year:</strong> 2024</span>
         </div>
-        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&auto=format&fit=crop&q=70" alt="Factory automation assembly line with sensor cables" style="width:100%; height:400px; object-fit:cover; border-radius:var(--radius-xl); border:1px solid var(--border-color);" loading="eager">
+        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1200&auto=format&fit=crop&q=70"
+          alt="Factory automation assembly line with sensor cables"
+          style="width:100%; height:400px; object-fit:cover; border-radius:var(--radius-xl); border:1px solid var(--border-color);"
+          loading="eager">
       </div>
     </section>
 
@@ -164,19 +146,37 @@
 
     <!-- Full narrative -->
     <section class="section reveal-item">
-      <div class="container" style="display:grid; grid-template-columns:1fr 320px; gap:var(--space-8); align-items:start;">
+      <div class="container"
+        style="display:grid; grid-template-columns:1fr 320px; gap:var(--space-8); align-items:start;">
         <article>
           <h2 style="font-size:var(--fs-600); margin-bottom:var(--space-4);">The Problem</h2>
-          <p>Vikas Automotive Components operated three high-speed stamping and assembly lines coordinated by a mix of Siemens S7-300 and S7-1500 PLCs — some installed as far back as 2009. None of these controllers exposed their diagnostic registers to any centralized system. Maintenance engineers walked the floor with clipboards, manually checking indicators. Bottleneck identification was reactive rather than predictive: engineers learned about cycle-time spikes only when downstream buffers overflowed.</p>
-          <p>The engineering challenge was not just data collection — it was <em>safe</em> data collection without interrupting live production or modifying validated PLC programs that controlled physical safety-critical sequences.</p>
+          <p>Vikas Automotive Components operated three high-speed stamping and assembly lines coordinated by a mix of
+            Siemens S7-300 and S7-1500 PLCs — some installed as far back as 2009. None of these controllers exposed
+            their diagnostic registers to any centralized system. Maintenance engineers walked the floor with
+            clipboards, manually checking indicators. Bottleneck identification was reactive rather than predictive:
+            engineers learned about cycle-time spikes only when downstream buffers overflowed.</p>
+          <p>The engineering challenge was not just data collection — it was <em>safe</em> data collection without
+            interrupting live production or modifying validated PLC programs that controlled physical safety-critical
+            sequences.</p>
 
-          <h2 style="font-size:var(--fs-600); margin-top:var(--space-7); margin-bottom:var(--space-4);">Our Approach</h2>
-          <p>We deployed a read-only OPC-UA server layer on each PLC rack using Siemens' built-in OPC-UA capability (available in S7-1500 firmware 2.0+) and a lightweight Kepware bridge for the legacy S7-300 units. This approach required zero modification to existing ladder logic — a hard requirement for safety validation continuity.</p>
-          <p>Edge gateways running our proprietary EdgeLink™ firmware aggregated all 40 OPC-UA endpoints, translating register reads into structured MQTT JSON payloads and publishing them to an AWS IoT Core broker over TLS-secured connections. Data latency from PLC register to cloud database was consistently under 1.2 seconds end-to-end.</p>
-          <p>A custom React-free web dashboard (built in vanilla JS + Chart.js) displayed per-station cycle times, fault counters, and rolling 8-hour throughput trends — fully accessible, keyboard-navigable, and mobile-compatible for tablet-toting floor supervisors.</p>
+          <h2 style="font-size:var(--fs-600); margin-top:var(--space-7); margin-bottom:var(--space-4);">Our Approach
+          </h2>
+          <p>We deployed a read-only OPC-UA server layer on each PLC rack using Siemens' built-in OPC-UA capability
+            (available in S7-1500 firmware 2.0+) and a lightweight Kepware bridge for the legacy S7-300 units. This
+            approach required zero modification to existing ladder logic — a hard requirement for safety validation
+            continuity.</p>
+          <p>Edge gateways running our proprietary EdgeLink™ firmware aggregated all 40 OPC-UA endpoints, translating
+            register reads into structured MQTT JSON payloads and publishing them to an AWS IoT Core broker over
+            TLS-secured connections. Data latency from PLC register to cloud database was consistently under 1.2 seconds
+            end-to-end.</p>
+          <p>A custom React-free web dashboard (built in vanilla JS + Chart.js) displayed per-station cycle times, fault
+            counters, and rolling 8-hour throughput trends — fully accessible, keyboard-navigable, and mobile-compatible
+            for tablet-toting floor supervisors.</p>
 
-          <h2 style="font-size:var(--fs-600); margin-top:var(--space-7); margin-bottom:var(--space-4);">Technology Stack</h2>
-          <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:var(--space-4); margin-bottom:var(--space-6);">
+          <h2 style="font-size:var(--fs-600); margin-top:var(--space-7); margin-bottom:var(--space-4);">Technology Stack
+          </h2>
+          <div
+            style="display:grid; grid-template-columns:repeat(2,1fr); gap:var(--space-4); margin-bottom:var(--space-6);">
             <div class="card card--service" style="padding:var(--space-4);">
               <h4 style="font-size:var(--fs-300); margin-bottom:var(--space-2);">OT Layer</h4>
               <ul style="font-size:var(--fs-200); display:flex; flex-direction:column; gap:var(--space-1);">
@@ -198,15 +198,26 @@
           </div>
 
           <h2 style="font-size:var(--fs-600); margin-top:var(--space-7); margin-bottom:var(--space-4);">Results</h2>
-          <p>Within 8 weeks of live operation, the real-time dashboard revealed a recurring 340ms cycle-time spike at Station 7 — a pneumatic gripper with a slow retract sequence that had been absorbing buffer slack invisibly for over a year. A 2-hour mechanical adjustment eliminated the spike, directly contributing to a sustained <strong>14% improvement in overall line throughput</strong>.</p>
-          <p>Manual floor-check rounds decreased by 90% as supervisors shifted to exception-based management: the system generates alerts, they investigate alerts. Unscheduled downtime on the monitored lines dropped 22% in the 6 months post-commissioning.</p>
+          <p>Within 8 weeks of live operation, the real-time dashboard revealed a recurring 340ms cycle-time spike at
+            Station 7 — a pneumatic gripper with a slow retract sequence that had been absorbing buffer slack invisibly
+            for over a year. A 2-hour mechanical adjustment eliminated the spike, directly contributing to a sustained
+            <strong>14% improvement in overall line throughput</strong>.
+          </p>
+          <p>Manual floor-check rounds decreased by 90% as supervisors shifted to exception-based management: the system
+            generates alerts, they investigate alerts. Unscheduled downtime on the monitored lines dropped 22% in the 6
+            months post-commissioning.</p>
 
           <!-- Client Quote -->
-          <blockquote style="border-left:4px solid var(--accent); padding:var(--space-5); background:var(--bg-secondary); border-radius:0 var(--radius-md) var(--radius-md) 0; margin-top:var(--space-6);">
-            <p style="font-style:italic; font-size:var(--fs-400); margin-bottom:var(--space-3); color:var(--text-primary);">"Sanuma's team completely digitized our assembly floor tracking. The OPC-UA telemetry system they deployed has given us unprecedented visibility into bottleneck cycles, improving our line throughput by 14%."</p>
+          <blockquote
+            style="border-left:4px solid var(--accent); padding:var(--space-5); background:var(--bg-secondary); border-radius:0 var(--radius-md) var(--radius-md) 0; margin-top:var(--space-6);">
+            <p
+              style="font-style:italic; font-size:var(--fs-400); margin-bottom:var(--space-3); color:var(--text-primary);">
+              "Sanuma's team completely digitized our assembly floor tracking. The OPC-UA telemetry system they deployed
+              has given us unprecedented visibility into bottleneck cycles, improving our line throughput by 14%."</p>
             <footer>
               <strong>Rajesh Kumar</strong>
-              <span style="display:block; font-size:var(--fs-200); color:var(--text-muted);">Director of Manufacturing Operations, Vikas Automotive Components</span>
+              <span style="display:block; font-size:var(--fs-200); color:var(--text-muted);">Director of Manufacturing
+                Operations, Vikas Automotive Components</span>
             </footer>
           </blockquote>
         </article>
@@ -216,15 +227,26 @@
           <div class="card card--service" style="padding:var(--space-5);">
             <h3 style="font-size:var(--fs-300); margin-bottom:var(--space-4);">Related Services</h3>
             <ul style="display:flex; flex-direction:column; gap:var(--space-3);">
-              <li><a href="services.html#industrial-iot" class="card-link" style="display:inline-flex">Industrial IoT <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z"/></svg></a></li>
-              <li><a href="services.html#control-systems" class="card-link" style="display:inline-flex">PLC Engineering <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z"/></svg></a></li>
-              <li><a href="solutions.html" class="card-link" style="display:inline-flex">EdgeLink™ Platform <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z"/></svg></a></li>
+              <li><a href="services.html#industrial-iot" class="card-link" style="display:inline-flex">Industrial IoT
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z" />
+                  </svg></a></li>
+              <li><a href="services.html#control-systems" class="card-link" style="display:inline-flex">PLC Engineering
+                  <svg viewBox="0 0 24 24">
+                    <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z" />
+                  </svg></a></li>
+              <li><a href="solutions.html" class="card-link" style="display:inline-flex">EdgeLink™ Platform <svg
+                    viewBox="0 0 24 24">
+                    <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z" />
+                  </svg></a></li>
             </ul>
           </div>
           <div class="card card--flagship" style="padding:var(--space-5); text-align:center;">
             <h3 style="font-size:var(--fs-300); margin-bottom:var(--space-3);">Similar Challenge?</h3>
-            <p style="font-size:var(--fs-200); margin-bottom:var(--space-4);">Let's scope your telemetry integration and identify quick-win visibility improvements.</p>
-            <a href="contact.html" class="btn btn--primary" style="width:100%;" aria-label="Start a project inquiry">Start Inquiry</a>
+            <p style="font-size:var(--fs-200); margin-bottom:var(--space-4);">Let's scope your telemetry integration and
+              identify quick-win visibility improvements.</p>
+            <a href="contact.html" class="btn btn--primary" style="width:100%;"
+              aria-label="Start a project inquiry">Start Inquiry</a>
           </div>
         </aside>
       </div>
@@ -240,32 +262,44 @@
         <div class="grid grid-cols-3">
           <div class="card card--blog">
             <div class="card-image-wrap">
-              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=60" alt="Database servers" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=60"
+                alt="Database servers" loading="lazy">
               <span class="card-badge">Logistics</span>
             </div>
             <div class="card-body">
               <h3 style="font-size:var(--fs-400);">High-Throughput Order Queue Buffers</h3>
-              <a href="portfolio.html" class="card-link mt-4" style="display:inline-flex">View Project <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z"/></svg></a>
+              <a href="portfolio.html" class="card-link mt-4" style="display:inline-flex">View Project <svg
+                  viewBox="0 0 24 24">
+                  <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z" />
+                </svg></a>
             </div>
           </div>
           <div class="card card--blog">
             <div class="card-image-wrap">
-              <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=600&auto=format&fit=crop&q=60" alt="Vibration sensor" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=600&auto=format&fit=crop&q=60"
+                alt="Vibration sensor" loading="lazy">
               <span class="card-badge">Steel Processing</span>
             </div>
             <div class="card-body">
               <h3 style="font-size:var(--fs-400);">Bearing Thermal Anomaly Detection</h3>
-              <a href="portfolio.html" class="card-link mt-4" style="display:inline-flex">View Project <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z"/></svg></a>
+              <a href="portfolio.html" class="card-link mt-4" style="display:inline-flex">View Project <svg
+                  viewBox="0 0 24 24">
+                  <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z" />
+                </svg></a>
             </div>
           </div>
           <div class="card card--blog">
             <div class="card-image-wrap">
-              <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=600&auto=format&fit=crop&q=60" alt="Cloud architecture" loading="lazy">
+              <img src="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=600&auto=format&fit=crop&q=60"
+                alt="Cloud architecture" loading="lazy">
               <span class="card-badge">Cloud Software</span>
             </div>
             <div class="card-body">
               <h3 style="font-size:var(--fs-400);">Redis Cluster Caching Invalidation</h3>
-              <a href="portfolio.html" class="card-link mt-4" style="display:inline-flex">View Project <svg viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z"/></svg></a>
+              <a href="portfolio.html" class="card-link mt-4" style="display:inline-flex">View Project <svg
+                  viewBox="0 0 24 24">
+                  <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z" />
+                </svg></a>
             </div>
           </div>
         </div>
@@ -274,68 +308,21 @@
 
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-col-brand">
-        <a href="index.html" class="header-logo" style="margin-bottom:var(--space-2)" aria-label="Sanuma Home">
-          <svg viewBox="0 0 32 32" fill="none"><rect x="2" y="2" width="28" height="28" rx="6" fill="var(--clr-green-brand)"/><path d="M9 22V10L14 15L19 10V22" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span style="color:var(--text-primary)">SANUMA<span class="logo-accent">.</span></span>
-        </a>
-        <p class="footer-description">Premium industrial OT engineering and high-throughput IT software architecture. Delivering certified reliability since 2018.</p>
-        <div class="footer-socials">
-          <a href="#" class="social-link" aria-label="Sanuma on LinkedIn"><svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg></a>
-        </div>
-      </div>
-      <div>
-        <h4 class="footer-col-title">Navigation</h4>
-        <ul class="footer-links-list" role="list">
-          <li><a href="index.html" class="footer-link">Home</a></li>
-          <li><a href="about.html" class="footer-link">About</a></li>
-          <li><a href="services.html" class="footer-link">Services</a></li>
-          <li><a href="portfolio.html" class="footer-link">Portfolio</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="footer-col-title">Industries</h4>
-        <ul class="footer-links-list" role="list">
-          <li><a href="industries.html#automotive" class="footer-link">Automotive</a></li>
-          <li><a href="industries.html#logistics" class="footer-link">Logistics</a></li>
-          <li><a href="industries.html#steel" class="footer-link">Steel Processing</a></li>
-          <li><a href="industries.html#energy" class="footer-link">Energy Utilities</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="footer-col-title">Contact</h4>
-        <div class="footer-contact-info">
-          <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg><span>Navi Mumbai, MH, IN</span></div>
-          <div class="footer-contact-item"><svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg><span>info@sanuma.in</span></div>
-        </div>
-      </div>
-      <div>
-        <h4 class="footer-col-title">Legal</h4>
-        <ul class="footer-links-list" role="list">
-          <li><a href="career.html" class="footer-link">Careers</a></li>
-          <li><a href="privacy-policy.html" class="footer-link">Privacy Policy</a></li>
-          <li><a href="terms.html" class="footer-link">Terms & Conditions</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="container footer-bottom">
-      <span>© 2026 Sanuma India Pvt. Ltd. All rights reserved.</span>
-      <div class="footer-bottom-links">
-        <a href="privacy-policy.html" class="footer-bottom-link">Privacy</a>
-        <span>•</span>
-        <a href="terms.html" class="footer-bottom-link">Terms</a>
-      </div>
-    </div>
-  </footer>
+  <div data-include="assets/components/footer.html"></div>
 
-  <button class="back-to-top" aria-label="Scroll back to top"><svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor"><path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z"/></svg></button>
+  <button class="back-to-top" aria-label="Scroll back to top"><svg viewBox="0 0 24 24"
+      style="width:20px;height:20px;fill:currentColor">
+      <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
+    </svg></button>
   <div class="custom-cursor" aria-hidden="true"></div>
   <div class="custom-cursor-follower" aria-hidden="true"></div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" onerror="this.onerror=null;this.src='assets/vendor/gsap.min.js';"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" onerror="this.onerror=null;this.src='assets/vendor/swiper-bundle.min.js';"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js" onerror="this.onerror=null;this.src='assets/vendor/lenis.min.js';"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    onerror="this.onerror=null;this.src='assets/vendor/gsap.min.js';"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    onerror="this.onerror=null;this.src='assets/vendor/swiper-bundle.min.js';"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"
+    onerror="this.onerror=null;this.src='assets/vendor/lenis.min.js';"></script>
   <script type="module" src="assets/js/main.js"></script>
 </body>
+
 </html>
