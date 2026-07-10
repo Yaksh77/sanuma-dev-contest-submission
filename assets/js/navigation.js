@@ -89,7 +89,7 @@ export function initNavigation() {
   // Announcement Bar dismissal
   const announcementBar = document.querySelector('.announcement-bar');
   const closeBtn = document.querySelector('.announcement-close');
-  const SESSION_KEY = 'sanuma-announcement-dismissed';
+  const SESSION_KEY = 'robuzta-announcement-dismissed';
 
   if (announcementBar && closeBtn) {
     if (sessionStorage.getItem(SESSION_KEY)) {

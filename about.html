@@ -4,14 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us — Sanuma India Pvt. Ltd.</title>
+  <title>About Our Repair Laboratory — Robuzta Tech Labs</title>
   <meta name="description"
-    content="Read our founding story, operational values, timeline milestones, and meet the leadership engineering team at Sanuma India.">
+    content="Read our founding story, operational values, timeline milestones, and meet the certified technician team at Robuzta Tech Labs.">
   <link rel="canonical" href="">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 
+  <!-- Core Theme Initialization (Prevent FOIT) -->
   <script>
     (() => {
-      const key = "sanuma-theme";
+      const key = "robuzta-theme";
       const theme =
         localStorage.getItem(key) ||
         (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
@@ -23,9 +25,11 @@
   </script>
   <meta name="theme-color" content="#FFFFFF">
 
+  <!-- Swiper and Vendor CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     onerror="this.onerror=null;this.href='assets/vendor/swiper-bundle.min.css';">
 
+  <!-- CSS Design System -->
   <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/typography.css">
@@ -44,10 +48,12 @@
 </head>
 
 <body aria-busy="true">
+  <!-- Scroll Progress Bar -->
   <div class="scroll-progress-bar" aria-hidden="true"></div>
 
+  <!-- Page Loader Screen -->
   <div class="preloader" role="status" aria-label="Loading site components">
-    <div class="preloader-logo"><span class="logo-accent">S</span>ANUMA</div>
+    <div class="preloader-logo"><span class="logo-accent">R</span>OBUZTA</div>
     <div class="preloader-bar">
       <div class="preloader-progress"></div>
     </div>
@@ -55,18 +61,18 @@
 
   <!-- Announcement Bar -->
   <div class="announcement-bar" role="region" aria-label="Announcement">
-    <span>Now hiring: Join our Summer 2026 Engineering Internship Pipeline.</span>
-    <a href="career.html" style="text-decoration: underline; color: var(--clr-white); font-weight: var(--fw-bold);"
-      aria-label="Apply now">Apply Now</a>
+    <span>Doorstep Tech Repairs: Free pickup & drop across Ahmedabad under 3 hours!</span>
+    <a href="contact.html" style="text-decoration: underline; color: var(--clr-white); font-weight: var(--fw-bold);"
+      aria-label="Book a pickup repair">Book Pickup Now</a>
     <button class="announcement-close" aria-label="Close announcement bar">
-      <svg viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor">
         <path
           d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
       </svg>
     </button>
   </div>
 
-  <!-- Inlined Sticky Header -->
+  <!-- Sticky Header Include -->
   <div data-include="assets/components/header.html"></div>
 
   <!-- Mobile Overlay -->
@@ -74,13 +80,9 @@
     <nav aria-label="Mobile navigation">
       <ul class="mobile-menu" role="list">
         <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-        <li><a href="industries.html" class="nav-link">Industries</a></li>
-        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-        <li><a href="blog.html" class="nav-link">Technical Blog</a></li>
-        <li><a href="career.html" class="nav-link">Careers</a></li>
+        <li><a href="services.html" class="nav-link">Services Hub</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="blog.html" class="nav-link">Repair Blog</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
     </nav>
@@ -103,9 +105,9 @@
     <section class="section section-sm bg-secondary reveal-item">
       <div class="container text-center">
         <span class="section-tag">Who We Are</span>
-        <h1 style="margin-bottom:var(--space-3)">Engineering Operational Trust</h1>
-        <p class="lead" style="max-width:700px; margin: 0 auto;">Founded in 2018, Sanuma India Pvt. Ltd. delivers robust
-          controls and customized cloud platforms to industrial leaders.</p>
+        <h1 style="margin-bottom:var(--space-3)">Diagnostics & Repair Excellence</h1>
+        <p class="lead" style="max-width:700px; margin: 0 auto;">Founded in 2018, Robuzta Tech Labs operates a premier
+          micro-soldering and device repair laboratory for consumers and businesses in Ahmedabad.</p>
       </div>
     </section>
 
@@ -113,32 +115,41 @@
     <section class="section reveal-item">
       <div class="container grid grid-cols-2 align-center">
         <div>
-          <h2>Bridging Operational Telemetry and Cloud Code</h2>
-          <p>Sanuma was established with a singular vision: to resolve the communication friction between industrial
-            hardware (OT) and enterprise software systems (IT). We realized that manufacturing units were rich in
-            sensors but starved of aggregated analytics.</p>
-          <p>Over the past 8 years, we have assembled a multi-disciplinary laboratory of control engineers, PLC
-            programmers, database designers, and cloud developers. We do not build simple templates—we write the code
-            that coordinates automated machinery with back-end enterprise architectures.</p>
+          <h2>Restoring Technology, Preserving Data</h2>
+          <p>Robuzta was established with a singular vision: to resolve complex device failures that standard repair
+            shops consider unfixable. We realized that users were forced to choose between expensive full logic board
+            swaps or losing their data.</p>
+          <p>Over the years, we have built a state-of-the-art laboratory in Ahmedabad. We do not just swap components —
+            we trace circuit schematics, solder micro-controllers, optimize thermal paste loops, and reconstruct
+            corroded board traces under microscopes.</p>
         </div>
         <div
           style="background-color:var(--bg-secondary); border: 1px solid var(--border-color); padding: var(--space-6); border-radius: var(--radius-xl);">
           <h3 style="font-size: var(--fs-500); margin-bottom: var(--space-4);">Our Core Principles</h3>
-          <ul style="display:flex; flex-direction:column; gap: var(--space-4);">
-            <li>
-              <strong>Operational Integrity</strong>
-              <p style="margin-bottom:0; font-size:var(--fs-200);">Safety is non-negotiable. Every line of PLC code and
-                panel layout complies with IEC 61508 safety standards.</p>
+          <ul style="display:flex; flex-direction:column; gap: var(--space-4); padding:0; list-style:none;">
+            <li style="display:flex; gap: var(--space-3); align-items:flex-start;">
+              <span style="color:var(--accent); font-weight:var(--fw-bold)">✓</span>
+              <div>
+                <strong>Precision Diagnostics</strong>
+                <p style="margin-bottom:0; font-size:var(--fs-200);">We use thermal cameras and high-powered microscopes
+                  to identify the exact point of hardware failure before recommending repairs.</p>
+              </div>
             </li>
-            <li>
-              <strong>Crawlable Predictability</strong>
-              <p style="margin-bottom:0; font-size:var(--fs-200);">We construct software frameworks to be structurally
-                clear, performant, and visible to inspection crawlers.</p>
+            <li style="display:flex; gap: var(--space-3); align-items:flex-start;">
+              <span style="color:var(--accent); font-weight:var(--fw-bold)">✓</span>
+              <div>
+                <strong>Authentic Standards</strong>
+                <p style="margin-bottom:0; font-size:var(--fs-200);">Every screen, battery, and controller chip used in
+                  our laboratory meets original-specification standards for optimal performance.</p>
+              </div>
             </li>
-            <li>
-              <strong>Long-Term Engineering SLA</strong>
-              <p style="margin-bottom:0; font-size:var(--fs-200);">We provide structured post-commissioning service
-                contracts to guarantee near-zero systems latency.</p>
+            <li style="display:flex; gap: var(--space-3); align-items:flex-start;">
+              <span style="color:var(--accent); font-weight:var(--fw-bold)">✓</span>
+              <div>
+                <strong>SLA Warranties</strong>
+                <p style="margin-bottom:0; font-size:var(--fs-200);">We back all of our micro-soldering and display
+                  repairs with a standard 180-day parts and labor warranty.</p>
+              </div>
             </li>
           </ul>
         </div>
@@ -150,8 +161,8 @@
       <div class="container">
         <div class="section-header center">
           <span class="section-tag">Our History</span>
-          <h2>Milestones of Innovation</h2>
-          <p>Trace our growth path from a control panels consultancy to a comprehensive automation integration provider.
+          <h2>Milestones of Growth</h2>
+          <p>Trace our path from a local laptop diagnostic shop to Ahmedabad's premier electronics repair laboratory.
           </p>
         </div>
 
@@ -160,26 +171,26 @@
             <div class="timeline-step">
               <div class="step-number">2018</div>
               <h3 style="font-size:var(--fs-300);">Foundation</h3>
-              <p style="font-size:var(--fs-200); margin-bottom:0;">Established in Navi Mumbai, focusing on PLC
-                programming and panel design consultation.</p>
+              <p style="font-size:var(--fs-200); margin-bottom:0;">Established in Ahmedabad, focusing on motherboard
+                trace inspections and keyboard repairs.</p>
             </div>
             <div class="timeline-step">
               <div class="step-number">2021</div>
-              <h3 style="font-size:var(--fs-300);">IoT Expansion</h3>
-              <p style="font-size:var(--fs-200); margin-bottom:0;">Developed our proprietary edge-gateway converters to
-                stream OPC-UA datasets into cloud layers.</p>
+              <h3 style="font-size:var(--fs-300);">Micro-soldering Lab</h3>
+              <p style="font-size:var(--fs-200); margin-bottom:0;">Upgraded our workspace to include high-end Hakko
+                rework stations, digital microscopes, and ESD-safe zones.</p>
             </div>
             <div class="timeline-step">
               <div class="step-number">2024</div>
-              <h3 style="font-size:var(--fs-300);">AI Division</h3>
-              <p style="font-size:var(--fs-200); margin-bottom:0;">Launched our AI laboratory, introducing custom
-                thermal vibration algorithms for predictive maintenance.</p>
+              <h3 style="font-size:var(--fs-300);">Data Recovery Lab</h3>
+              <p style="font-size:var(--fs-200); margin-bottom:0;">Launched our dedicated data recovery service,
+                introducing clean-bench platter swapping and RAID restoration.</p>
             </div>
             <div class="timeline-step">
               <div class="step-number">2026</div>
-              <h3 style="font-size:var(--fs-300);">Enterprise Growth</h3>
-              <p style="font-size:var(--fs-200); margin-bottom:0;">Serving 140+ industrial partners, deploying
-                microservices for high-throughput cloud dashboards.</p>
+              <h3 style="font-size:var(--fs-300);">Corporate Support</h3>
+              <p style="font-size:var(--fs-200); margin-bottom:0;">Serving over 140 corporate fleets, office devices,
+                and local businesses with workplace SLAs and AMC support plans.</p>
             </div>
           </div>
         </div>
@@ -191,8 +202,8 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Our Specialists</span>
-          <h2>The Engineering Leads</h2>
-          <p>Meet the multidisciplinary leads coordinating our automation and software projects.</p>
+          <h2>The Diagnostics Leads</h2>
+          <p>Meet the multidisciplinary leads coordinating our hardware restorations and diagnostics projects.</p>
         </div>
 
         <div class="grid grid-cols-3">
@@ -204,9 +215,9 @@
             <h3 style="font-size:var(--fs-400); margin-bottom:2px;">Dr. Meera Nair</h3>
             <span
               style="color:var(--accent); font-weight:var(--fw-semibold); font-size:var(--fs-200); margin-bottom:var(--space-3);">Director
-              of AI Systems</span>
-            <p style="font-size:var(--fs-200); margin-bottom:0;">Ph.D. in Controls Theory with 12 years engineering
-              motor vibration modeling algorithms.</p>
+              of Upgrades</span>
+            <p style="font-size:var(--fs-200); margin-bottom:0;">Ph.D. in Materials Science with 12 years of experience
+              in thermal efficiency and performance design.</p>
           </div>
           <!-- Team member 2 -->
           <div class="card card--service" style="text-align: center; align-items:center;">
@@ -216,21 +227,21 @@
             <h3 style="font-size:var(--fs-400); margin-bottom:2px;">Amit Trivedi</h3>
             <span
               style="color:var(--accent); font-weight:var(--fw-semibold); font-size:var(--fs-200); margin-bottom:var(--space-3);">Lead
-              Automation Engineer</span>
-            <p style="font-size:var(--fs-200); margin-bottom:0;">Certified Siemens System Programmer with 14 years
-              deploying SCADA setups.</p>
+              Diagnostics Technician</span>
+            <p style="font-size:var(--fs-200); margin-bottom:0;">Lead micro-soldering engineer with 14 years of
+              experience diagnosing complex board traces.</p>
           </div>
           <!-- Team member 3 -->
           <div class="card card--service" style="text-align: center; align-items:center;">
             <img src="https://randomuser.me/api/portraits/men/78.jpg" alt="Siddharth Sen"
-              style="font-width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:var(--space-4); border: 2px solid var(--accent);"
+              style="width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:var(--space-4); border: 2px solid var(--accent);"
               loading="lazy">
             <h3 style="font-size:var(--fs-400); margin-bottom:2px;">Siddharth Sen</h3>
             <span
-              style="color:var(--accent); font-weight:var(--fw-semibold); font-size:var(--fs-200); margin-bottom:var(--space-3);">Principal
-              Software Architect</span>
-            <p style="font-size:var(--fs-200); margin-bottom:0;">Backend developer specializing in event-driven
-              microservices scaling and database shards.</p>
+              style="color:var(--accent); font-weight:var(--fw-semibold); font-size:var(--fs-200); margin-bottom:var(--space-3);">Data
+              Recovery Specialist</span>
+            <p style="font-size:var(--fs-200); margin-bottom:0;">Master file architect specializing in physical drive
+              repair and logical RAID partition reconstructions.</p>
           </div>
         </div>
       </div>
@@ -241,18 +252,21 @@
 
   </main>
 
-  <!-- Inlined Footer -->
+  <!-- Sticky Footer -->
   <div data-include="assets/components/footer.html"></div>
 
+  <!-- Scroll-up clicker -->
   <button class="back-to-top" aria-label="Scroll back to top of the page">
-    <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor">
+    <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor" aria-hidden="true">
       <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
     </svg>
   </button>
 
+  <!-- Custom Cursor follower -->
   <div class="custom-cursor" aria-hidden="true"></div>
   <div class="custom-cursor-follower" aria-hidden="true"></div>
 
+  <!-- CDN scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
     onerror="this.onerror=null;this.src='assets/vendor/three.min.js';"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
@@ -262,6 +276,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"
     onerror="this.onerror=null;this.src='assets/vendor/lenis.min.js';"></script>
 
+  <!-- Application Bootstrap Entrypoint -->
   <script type="module" src="assets/js/main.js"></script>
 </body>
 

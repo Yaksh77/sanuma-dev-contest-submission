@@ -12,8 +12,8 @@ export function initSEO() {
   }
   canonicalLink.setAttribute('href', currentUrl.split('?')[0].split('#')[0]); // Strip query params/hashes
 
-  // 2. Generate and Inject Global Schema (Organization & WebSite)
-  injectOrganizationSchema();
+  // 2. Generate and Inject Global Schema (LocalBusiness & Service)
+  injectLocalBusinessSchema();
 
   // 3. Inject FAQ Schema if accordion FAQ exists on page
   if (document.querySelector('.faq-accordion')) {
@@ -37,23 +37,51 @@ function injectSchema(schemaId, schemaObj) {
   script.textContent = JSON.stringify(schemaObj, null, 2);
 }
 
-function injectOrganizationSchema() {
-  const orgSchema = {
+function injectLocalBusinessSchema() {
+  const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Sanuma India Pvt. Ltd.",
+    "@type": "ComputerStore",
+    "name": "Robuzta Tech Labs — Premium Device Repair Lab",
     "url": window.location.origin,
-    "logo": `${window.location.origin}/assets/images/logo.svg`,
-    "description": "Enterprise software development, industrial automation integration, and high-performance technical engineering services.",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-99999-88888",
-      "contactType": "customer service",
-      "areaServed": "IN",
-      "availableLanguage": ["en", "hi"]
-    }
+    "logo": `${window.location.origin}/assets/icons/favicon.svg`,
+    "image": `${window.location.origin}/assets/images/og-image.jpg`,
+    "description": "Premium laptop, MacBook, smartphone & gaming PC repair services in Ahmedabad. Diagnostics, screen replacements, battery service, and micro-soldering.",
+    "telephone": "+91 999 245 2459",
+    "priceRange": "$$",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "103, First Floor, Sun South Winds, Safal Parisar Road, South Bopal",
+      "addressLocality": "Ahmedabad",
+      "addressRegion": "Gujarat",
+      "postalCode": "380058",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 23.015813,
+      "longitude": 72.468464
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "11:00",
+      "closes": "19:00"
+    },
+    "sameAs": [
+      "https://www.facebook.com/robuztatechlabs/",
+      "https://www.instagram.com/robuztatechlabs/",
+      "https://www.youtube.com/@robuztatechlabs"
+    ]
   };
-  injectSchema('schema-organization', orgSchema);
+  injectSchema('schema-localbusiness', localBusinessSchema);
 }
 
 function injectFAQSchema() {
