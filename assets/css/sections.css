@@ -98,31 +98,6 @@
 }
 
 /* Trusted Brands Section */
-/* .brands-slider {
-  padding: var(--space-5) 0;
-  border-bottom: 1px solid var(--border-color);
-  background-color: var(--bg-secondary);
-}
-
-.brand-slide {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60px;
-  opacity: 0.5;
-  filter: grayscale(100%);
-  transition: opacity var(--transition-fast), filter var(--transition-fast);
-}
-
-.brand-slide:hover {
-  opacity: 1;
-  filter: grayscale(0%);
-}
-
-.brand-slide img {
-  max-height: 32px;
-  object-fit: contain;
-} */
 
 .brands-marquee{
 
@@ -187,7 +162,20 @@ will-change:transform;
   transform: translateY(-4px);
 }
 
-.brand-card img { display: block; height: 38px; max-width: 140px; object-fit: contain; }
+.brand-card img {
+    display: block;
+    height: 42px;
+    width: auto;
+    max-width: 150px;
+    object-fit: contain;
+    filter: none;
+    opacity: 1;
+    transition: transform .3s ease;
+}
+
+.brand-card:hover img {
+    transform: scale(1.05);
+}
 
 @keyframes brandsScroll {
   from { transform: translateX(0); }
