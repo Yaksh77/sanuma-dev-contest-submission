@@ -49,7 +49,7 @@ export function initAnimations() {
   // 2. Ripple Button Effect
   const rippleButtons = document.querySelectorAll('.btn');
   rippleButtons.forEach(btn => {
-    btn.addEventListener('click', function(e) {
+    btn.addEventListener('click', function (e) {
       const rect = this.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
@@ -80,8 +80,8 @@ export function initAnimations() {
       const y = e.clientY - rect.top - rect.height / 2;
 
       // Magnetic pull pull effect (max 15px displacement)
-      const pullX = x * 0.35;
-      const pullY = y * 0.35;
+      const pullX = x * 0.15;
+      const pullY = y * 0.15;
 
       btn.style.transform = `translate(${pullX}px, ${pullY}px)`;
     });
@@ -101,17 +101,17 @@ export function initAnimations() {
       ease: 'power3.out',
       stagger: 0.2
     })
-    .from('.hero-subtitle', {
-      duration: 0.8,
-      y: 20,
-      opacity: 0,
-      ease: 'power3.out'
-    }, '-=0.6')
-    .from('.hero-actions', {
-      duration: 0.8,
-      y: 20,
-      opacity: 0,
-      ease: 'power3.out'
-    }, '-=0.6');
+      .from('.hero-subtitle', {
+        duration: 0.8,
+        y: 20,
+        opacity: 0,
+        ease: 'power3.out'
+      }, '-=0.6')
+      .from('.hero-actions', {
+        duration: 0.8,
+        y: 20,
+        opacity: 0,
+        ease: 'power3.out'
+      }, '-=0.6');
   }
 }

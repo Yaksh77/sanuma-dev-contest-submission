@@ -103,22 +103,6 @@
   gap: 0;
 }
 
-/* Form success / error messages */
-.form-success-msg {
-  display: flex;
-  align-items: flex-start;
-  gap: var(--space-3);
-  background: var(--clr-green-soft-tint, rgba(0,201,122,0.08));
-  border: 1px solid var(--accent);
-  border-radius: var(--radius-md);
-  padding: var(--space-4) var(--space-5);
-  margin-top: var(--space-4);
-  font-size: var(--fs-300);
-  color: var(--text-primary);
-}
-
-.form-success-msg p { margin: 0; }
-
 /* Select element reset for themes */
 select.form-input {
   appearance: none;
