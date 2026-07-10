@@ -9,18 +9,15 @@
     content="Sanuma India Pvt. Ltd.'s Terms and Conditions governing use of sanuma.in and all related digital services.">
   <link rel="canonical" href="">
   <script>
-    (function () {
-      var THEME_KEY = 'sanuma-theme';
-      var saved = localStorage.getItem(THEME_KEY);
-      var theme = (saved === 'dark' || saved === 'light')
-        ? saved
-        : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-
-      if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-      var meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute('content', theme === 'dark' ? '#0A0A0A' : '#FFFFFF');
+    (() => {
+      const key = "sanuma-theme";
+      const theme =
+        localStorage.getItem(key) ||
+        (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.dataset.theme = theme;
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute("content", theme === "dark" ? "#0A0A0A" : "#FFFFFF");
     })();
   </script>
   <meta name="theme-color" content="#FFFFFF">
@@ -34,6 +31,9 @@
   <link rel="stylesheet" href="assets/css/buttons.css">
   <link rel="stylesheet" href="assets/css/header.css">
   <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
   <style>
     .legal-layout {
       display: grid;
@@ -131,8 +131,6 @@
 </head>
 
 <body aria-busy="true">
-  <a href="#main-content" class="skip-to-content">Skip to main content</a>
-
   <div data-include="assets/components/header.html"></div>
 
   <div class="breadcrumbs-bar" aria-label="Breadcrumb">
