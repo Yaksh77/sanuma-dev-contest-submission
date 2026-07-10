@@ -4,14 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Technical Blog — Sanuma India Pvt. Ltd.</title>
+  <title>Device Care & Maintenance Blog — Robuzta Tech Labs</title>
   <meta name="description"
-    content="In-depth engineering articles on OPC-UA, microservices scaling, PLC control systems, and predictive maintenance from Sanuma India's engineering laboratory.">
+    content="Tips, guides, and diagnostic tutorials from our certified technicians on how to extend your laptop, MacBook, or phone battery lifespan.">
   <link rel="canonical" href="">
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+  <!-- Core Theme Initialization (Prevent FOIT) -->
   <script>
     (() => {
-      const key = "sanuma-theme";
+      const key = "robuzta-theme";
       const theme =
         localStorage.getItem(key) ||
         (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
@@ -22,8 +24,12 @@
     })();
   </script>
   <meta name="theme-color" content="#FFFFFF">
+
+  <!-- Swiper and Vendor CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     onerror="this.onerror=null;this.href='assets/vendor/swiper-bundle.min.css';">
+
+  <!-- CSS Design System -->
   <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/typography.css">
@@ -41,48 +47,53 @@
 </head>
 
 <body aria-busy="true">
+  <!-- Scroll Progress Bar -->
   <div class="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Page Loader Screen -->
   <div class="preloader" role="status" aria-label="Loading">
-    <div class="preloader-logo"><span class="logo-accent">S</span>ANUMA</div>
+    <div class="preloader-logo"><span class="logo-accent">R</span>OBUZTA</div>
     <div class="preloader-bar">
       <div class="preloader-progress"></div>
     </div>
   </div>
 
+  <!-- Announcement Bar -->
   <div class="announcement-bar" role="region" aria-label="Announcement">
-    <span>Now hiring: Join our Summer 2026 Engineering Internship Pipeline.</span>
-    <a href="career.html" style="text-decoration:underline;color:var(--clr-white);font-weight:var(--fw-bold)">Apply
-      Now</a>
+    <span>Doorstep Tech Repairs: Free pickup & drop across Ahmedabad under 3 hours!</span>
+    <a href="contact.html" style="text-decoration: underline; color: var(--clr-white); font-weight: var(--fw-bold);"
+      aria-label="Book a pickup repair">Book Pickup Now</a>
     <button class="announcement-close" aria-label="Close announcement bar">
-      <svg viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor">
         <path
           d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
       </svg>
     </button>
   </div>
 
+  <!-- Sticky Header Include -->
   <div data-include="assets/components/header.html"></div>
 
+  <!-- Mobile Overlay -->
   <div class="mobile-nav-overlay" aria-hidden="true">
     <nav aria-label="Mobile navigation">
       <ul class="mobile-menu" role="list">
         <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-        <li><a href="blog.html" class="nav-link">Blog</a></li>
-        <li><a href="career.html" class="nav-link">Careers</a></li>
+        <li><a href="services.html" class="nav-link">Services Hub</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="blog.html" class="nav-link">Repair Blog</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
     </nav>
   </div>
 
+  <!-- Breadcrumbs -->
   <div class="breadcrumbs-bar" aria-label="Breadcrumb">
     <div class="container">
       <ol class="breadcrumbs-list" role="list">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
         <li class="breadcrumb-separator" aria-hidden="true">/</li>
-        <li class="breadcrumb-item active" aria-current="page">Technical Blog</li>
+        <li class="breadcrumb-item active" aria-current="page">Repair Blog</li>
       </ol>
     </div>
   </div>
@@ -90,10 +101,10 @@
   <main id="main-content">
     <section class="section section-sm bg-secondary reveal-item">
       <div class="container text-center">
-        <span class="section-tag">Engineering Insights</span>
-        <h1 style="margin-bottom:var(--space-3)">Sanuma TechNotes</h1>
-        <p class="lead" style="max-width:600px;margin:0 auto;">Technical articles from our engineering laboratory
-          covering industrial protocols, cloud scaling, and predictive systems.</p>
+        <span class="section-tag">Repair Insights</span>
+        <h1 style="margin-bottom:var(--space-3)">Device Care & Maintenance Blog</h1>
+        <p class="lead" style="max-width:600px;margin:0 auto;">Guides and diagnostic tips from our lab technicians to
+          help you keep your hardware running smoothly.</p>
       </div>
     </section>
 
@@ -104,30 +115,31 @@
         <div class="card card--flagship"
           style="padding:0; display:grid; grid-template-columns:1.2fr 1fr; overflow:hidden;">
           <div style="overflow:hidden; max-height:400px;">
-            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop&q=70"
-              alt="Industrial IoT sensor network" style="width:100%;height:100%;object-fit:cover;" loading="eager">
+            <img src="https://images.unsplash.com/photo-1601524909162-be87252be318?w=800&auto=format&fit=crop&q=70"
+              alt="Close-up of microscope board repair diagnostics" style="width:100%;height:100%;object-fit:cover;"
+              loading="eager">
           </div>
           <div style="padding:var(--space-7); display:flex; flex-direction:column; justify-content:center;">
             <div style="display:flex; gap:var(--space-3); margin-bottom:var(--space-3); flex-wrap:wrap;">
-              <span class="section-tag">Industrial Automation</span>
+              <span class="section-tag">Hardware Diagnostics</span>
               <span style="font-size:var(--fs-100);color:var(--text-muted);display:flex;align-items:center">May 14, 2026
                 · 6 min read</span>
             </div>
-            <h2 style="font-size:var(--fs-600); margin-bottom:var(--space-4);">Demystifying OPC-UA in Industrial IoT
-              Systems</h2>
-            <p style="font-size:var(--fs-300); margin-bottom:var(--space-5);">OPC-UA has become the gold standard for
-              industrial communications. We break down how it solves legacy device interoperability and data security on
-              the factory floor.</p>
+            <h2 style="font-size:var(--fs-600); margin-bottom:var(--space-4);">Advanced Logic Board Diagnostics: Finding
+              Micro-Shorts</h2>
+            <p style="font-size:var(--fs-300); margin-bottom:var(--space-5);">Locating short circuits on multilayered
+              logic boards can be challenging. We break down our voltage injection and thermography steps to isolate
+              issues.</p>
             <div style="display:flex; align-items:center; gap:var(--space-3); margin-bottom:var(--space-5);">
               <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="Amit Trivedi"
-                style="width:40px;height:40px;border-radius:50%;border:2px solid var(--accent);">
+                style="width:40px;height:40px;border-radius:50%;border:2px solid var(--accent);" loading="lazy">
               <div>
                 <div style="font-weight:var(--fw-semibold);font-size:var(--fs-200);">Amit Trivedi</div>
-                <div style="font-size:var(--fs-100);color:var(--text-muted);">Lead Automation Engineer</div>
+                <div style="font-size:var(--fs-100);color:var(--text-muted);">Lead Diagnostics Technician</div>
               </div>
             </div>
-            <a href="#" class="btn btn--primary" style="align-self:flex-start;" aria-label="Read OPC-UA article">Read
-              Article</a>
+            <a href="contact.html" class="btn btn--primary" style="align-self:flex-start;"
+              aria-label="Read micro-shorts article">Request Direct Consult</a>
           </div>
         </div>
       </div>
@@ -145,28 +157,29 @@
         <div class="portfolio-filters" role="group" aria-label="Article category filter"
           style="justify-content:flex-start; margin-bottom:var(--space-6);">
           <button class="filter-btn active" data-filter="all">All Topics</button>
-          <button class="filter-btn" data-filter="automation">Industrial Automation</button>
-          <button class="filter-btn" data-filter="software">Software Engineering</button>
-          <button class="filter-btn" data-filter="ai">AI & Robotics</button>
+          <button class="filter-btn" data-filter="diagnostics">Diagnostics</button>
+          <button class="filter-btn" data-filter="maintenance">Maintenance</button>
+          <button class="filter-btn" data-filter="upgrades">Upgrades</button>
         </div>
 
         <div class="grid grid-cols-3" id="blog-grid">
           <!-- Article 1 -->
-          <article class="blog-item" data-category="automation">
+          <article class="blog-item" data-category="diagnostics">
             <div class="card card--blog">
               <div class="card-image-wrap">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&auto=format&fit=crop&q=60"
-                  alt="Industrial IoT sensor network" loading="lazy">
-                <span class="card-badge">Automation</span>
+                <img src="https://images.unsplash.com/photo-1597872200319-380d92503d27?w=600&auto=format&fit=crop&q=60"
+                  alt="Microscopic PCB circuit board inspection" loading="lazy">
+                <span class="card-badge">Diagnostics</span>
               </div>
               <div class="card-body">
                 <div class="card-meta"><span>Amit Trivedi</span> <span>May 14, 2026</span> <span>6 min read</span></div>
-                <h3 style="font-size:var(--fs-400);margin-bottom:var(--space-3);">Demystifying OPC-UA in Industrial IoT
-                  Systems</h3>
-                <p style="font-size:var(--fs-200);">OPC-UA solves legacy device interoperability and data security on
-                  the factory floor with a unified information model.</p>
-                <a href="#" class="card-link" style="margin-top:auto;display:inline-flex;"
-                  aria-label="Read OPC-UA article">Read Article <svg viewBox="0 0 24 24">
+                <h3 style="font-size:var(--fs-400);margin-bottom:var(--space-3);">Advanced Logic Board Diagnostics:
+                  Finding Micro-Shorts</h3>
+                <p style="font-size:var(--fs-200);">Locating short circuits on motherboard layers using thermal imaging
+                  scanners and voltage injection loops.</p>
+                <a href="contact.html" class="card-link" style="margin-top:auto;display:inline-flex;"
+                  aria-label="Read diagnostics article">Learn More <svg viewBox="0 0 24 24"
+                    style="width:16px;height:16px;fill:currentColor">
                     <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z" />
                   </svg></a>
               </div>
@@ -174,22 +187,23 @@
           </article>
 
           <!-- Article 2 -->
-          <article class="blog-item" data-category="software">
+          <article class="blog-item" data-category="maintenance">
             <div class="card card--blog">
               <div class="card-image-wrap">
-                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&auto=format&fit=crop&q=60"
-                  alt="Server infrastructure" loading="lazy">
-                <span class="card-badge">Software</span>
+                <img src="https://images.unsplash.com/photo-1625442533036-7c3098e91e5e?w=600&auto=format&fit=crop&q=60"
+                  alt="Laptop components battery cells cleaning" loading="lazy">
+                <span class="card-badge">Maintenance</span>
               </div>
               <div class="card-body">
                 <div class="card-meta"><span>Siddharth Sen</span> <span>June 02, 2026</span> <span>8 min read</span>
                 </div>
-                <h3 style="font-size:var(--fs-400);margin-bottom:var(--space-3);">Scaling Microservices with Predictable
-                  Latency</h3>
-                <p style="font-size:var(--fs-200);">Architecting systems for millions of operations requires managing
-                  tail latencies using message queuing and structured in-memory caching.</p>
-                <a href="#" class="card-link" style="margin-top:auto;display:inline-flex;"
-                  aria-label="Read microservices article">Read Article <svg viewBox="0 0 24 24">
+                <h3 style="font-size:var(--fs-400);margin-bottom:var(--space-3);">How to Extend Your Laptop Battery
+                  Lifespan</h3>
+                <p style="font-size:var(--fs-200);">Understand battery chemistry degradation and simple habits to double
+                  your laptop battery's useful lifespan.</p>
+                <a href="contact.html" class="card-link" style="margin-top:auto;display:inline-flex;"
+                  aria-label="Read battery health article">Learn More <svg viewBox="0 0 24 24"
+                    style="width:16px;height:16px;fill:currentColor">
                     <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z" />
                   </svg></a>
               </div>
@@ -197,22 +211,22 @@
           </article>
 
           <!-- Article 3 -->
-          <article class="blog-item" data-category="ai">
+          <article class="blog-item" data-category="upgrades">
             <div class="card card--blog">
               <div class="card-image-wrap">
-                <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?w=600&auto=format&fit=crop&q=60"
-                  alt="Predictive maintenance sensors" loading="lazy">
-                <span class="card-badge">AI & Robotics</span>
+                <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=600&auto=format&fit=crop&q=60"
+                  alt="Installing desktop graphics card upgrades" loading="lazy">
+                <span class="card-badge">Upgrades</span>
               </div>
               <div class="card-body">
                 <div class="card-meta"><span>Dr. Meera Nair</span> <span>June 18, 2026</span> <span>5 min read</span>
                 </div>
-                <h3 style="font-size:var(--fs-400);margin-bottom:var(--space-3);">Implementing Predictive Maintenance on
-                  the Factory Floor</h3>
-                <p style="font-size:var(--fs-200);">A practical guide to deploying anomaly detection algorithms using
-                  low-cost vibration sensors and cloud telemetry streaming.</p>
-                <a href="#" class="card-link" style="margin-top:auto;display:inline-flex;"
-                  aria-label="Read predictive maintenance article">Read Article <svg viewBox="0 0 24 24">
+                <h3 style="font-size:var(--fs-400);margin-bottom:var(--space-3);">SSD vs RAM: Which Upgrade First?</h3>
+                <p style="font-size:var(--fs-200);">A hardware guide comparing bottlenecks. Learn which upgrade yields
+                  the best response improvements for your budget.</p>
+                <a href="contact.html" class="card-link" style="margin-top:auto;display:inline-flex;"
+                  aria-label="Read hardware upgrades article">Learn More <svg viewBox="0 0 24 24"
+                    style="width:16px;height:16px;fill:currentColor">
                     <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z" />
                   </svg></a>
               </div>
@@ -228,34 +242,39 @@
           <a href="blog.html?page=3" class="filter-btn" aria-label="Page 3">3</a>
           <a href="blog.html?page=2" class="filter-btn" aria-label="Next page"
             style="display:flex;align-items:center;gap:4px;">Next <svg style="width:14px;height:14px;fill:currentColor"
-              viewBox="0 0 24 24">
+              viewBox="0 0 24 24" aria-hidden="true">
               <path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21 12l-8.15-8.15-1.42 1.42 5.43 5.43H5v2z" />
             </svg></a>
         </nav>
       </div>
     </section>
 
+    <!-- Newsletter include -->
     <div data-include="assets/components/newsletter.html"></div>
 
   </main>
 
+  <!-- Global Footer Include -->
   <div data-include="assets/components/footer.html"></div>
 
+  <!-- Scroll-up clicker -->
   <button class="back-to-top" aria-label="Scroll back to top"><svg viewBox="0 0 24 24"
-      style="width:20px;height:20px;fill:currentColor">
+      style="width:20px;height:20px;fill:currentColor" aria-hidden="true">
       <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
     </svg></button>
   <div class="custom-cursor" aria-hidden="true"></div>
   <div class="custom-cursor-follower" aria-hidden="true"></div>
+
+  <!-- CDN scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
     onerror="this.onerror=null;this.src='assets/vendor/gsap.min.js';"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
     onerror="this.onerror=null;this.src='assets/vendor/swiper-bundle.min.js';"></script>
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"
     onerror="this.onerror=null;this.src='assets/vendor/lenis.min.js';"></script>
+
   <script>
     document.addEventListener('DOMContentLoaded', () => {
-      const filters = document.querySelectorAll('#blog-grid + * .filter-btn, .portfolio-filters .filter-btn');
       const items = document.querySelectorAll('.blog-item');
       document.querySelectorAll('.portfolio-filters .filter-btn').forEach(btn => {
         btn.addEventListener('click', () => {

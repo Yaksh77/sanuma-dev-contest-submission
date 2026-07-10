@@ -4,15 +4,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Capabilities & Services — Sanuma India Pvt. Ltd.</title>
+  <title>Repair Services & Capabilities — Robuzta Tech Labs</title>
   <meta name="description"
-    content="Explore our technical service catalog: Industrial IoT telemetry, custom software engineering, PLC systems commissioning, and predictive maintenance.">
+    content="Explore our repair capabilities: chip-level logic board micro-soldering, cracked screen replacements, battery service, data recovery, and corporate IT fleet support in Ahmedabad.">
   <link rel="canonical" href="">
   <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
 
+  <!-- Core Theme Initialization (Prevent FOIT) -->
   <script>
     (() => {
-      const key = "sanuma-theme";
+      const key = "robuzta-theme";
       const theme =
         localStorage.getItem(key) ||
         (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
@@ -24,9 +25,11 @@
   </script>
   <meta name="theme-color" content="#FFFFFF">
 
+  <!-- Swiper and Vendor CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     onerror="this.onerror=null;this.href='assets/vendor/swiper-bundle.min.css';">
 
+  <!-- CSS Design System -->
   <link rel="stylesheet" href="assets/css/variables.css">
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/typography.css">
@@ -45,10 +48,12 @@
 </head>
 
 <body aria-busy="true">
+  <!-- Scroll Progress Bar -->
   <div class="scroll-progress-bar" aria-hidden="true"></div>
 
+  <!-- Page Loader Screen -->
   <div class="preloader" role="status" aria-label="Loading site components">
-    <div class="preloader-logo"><span class="logo-accent">S</span>ANUMA</div>
+    <div class="preloader-logo"><span class="logo-accent">R</span>OBUZTA</div>
     <div class="preloader-bar">
       <div class="preloader-progress"></div>
     </div>
@@ -56,32 +61,28 @@
 
   <!-- Announcement Bar -->
   <div class="announcement-bar" role="region" aria-label="Announcement">
-    <span>Now hiring: Join our Summer 2026 Engineering Internship Pipeline.</span>
-    <a href="career.html" style="text-decoration: underline; color: var(--clr-white); font-weight: var(--fw-bold);"
-      aria-label="Apply now">Apply Now</a>
+    <span>Doorstep Tech Repairs: Free pickup & drop across Ahmedabad under 3 hours!</span>
+    <a href="contact.html" style="text-decoration: underline; color: var(--clr-white); font-weight: var(--fw-bold);"
+      aria-label="Book a pickup repair">Book Pickup Now</a>
     <button class="announcement-close" aria-label="Close announcement bar">
-      <svg viewBox="0 0 24 24">
+      <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor">
         <path
           d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
       </svg>
     </button>
   </div>
 
-  <!-- Inlined Sticky Header -->
+  <!-- Sticky Header -->
   <div data-include="assets/components/header.html"></div>
 
-  <!-- Mobile Overlay -->
+  <!-- Mobile Navigation Overlay -->
   <div class="mobile-nav-overlay" aria-hidden="true">
     <nav aria-label="Mobile navigation">
       <ul class="mobile-menu" role="list">
         <li><a href="index.html" class="nav-link">Home</a></li>
-        <li><a href="about.html" class="nav-link">About</a></li>
-        <li><a href="services.html" class="nav-link">Services</a></li>
-        <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-        <li><a href="industries.html" class="nav-link">Industries</a></li>
-        <li><a href="portfolio.html" class="nav-link">Portfolio</a></li>
-        <li><a href="blog.html" class="nav-link">Technical Blog</a></li>
-        <li><a href="career.html" class="nav-link">Careers</a></li>
+        <li><a href="services.html" class="nav-link">Services Hub</a></li>
+        <li><a href="about.html" class="nav-link">About Us</a></li>
+        <li><a href="blog.html" class="nav-link">Repair Blog</a></li>
         <li><a href="contact.html" class="nav-link">Contact</a></li>
       </ul>
     </nav>
@@ -93,7 +94,7 @@
       <ol class="breadcrumbs-list" role="list">
         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
         <li class="breadcrumb-separator" aria-hidden="true">/</li>
-        <li class="breadcrumb-item active" aria-current="page">Services</li>
+        <li class="breadcrumb-item active" aria-current="page">Services Hub</li>
       </ol>
     </div>
   </div>
@@ -105,174 +106,186 @@
       <div class="container text-center">
         <span class="section-tag">Our Capabilities</span>
         <h1 style="margin-bottom:var(--space-3)">Comprehensive Technical Services</h1>
-        <p class="lead" style="max-width:700px; margin:0 auto;">We design, deploy, and maintain engineering
-          infrastructures across four core domains, matching strict industry SLAs.</p>
+        <p class="lead" style="max-width:700px; margin:0 auto;">We perform precision component soldering, battery swaps, screen assemblies, and data recovery under strict ISO-grade ESD protection.</p>
       </div>
     </section>
 
     <!-- Services Detail Sections -->
 
-    <!-- Section 1: Industrial IoT -->
-    <section id="industrial-iot" class="section reveal-item" style="border-bottom: 1px solid var(--border-color)">
+    <!-- Section 1: Logic Board Micro-soldering -->
+    <section id="chip-level" class="section reveal-item" style="border-bottom: 1px solid var(--border-color)">
       <div class="container grid grid-cols-2 align-center">
         <div>
-          <span class="section-tag">OT Systems</span>
-          <h2>Industrial IoT & Telemetry Integrations</h2>
-          <p>We eliminate operational silos by mapping raw machinery data registers directly into secure enterprise
-            endpoints. Our engineers wire hardware transducers, construct field networks, and deploy robust telemetry
-            aggregators.</p>
+          <span class="section-tag">Diagnostics Lab</span>
+          <h2>Component-Level Logic Board Micro-soldering</h2>
+          <p>We fix motherboard issues that other repair stores claim are unfixable. Our technicians inspect motherboard circuits under high-powered stereomicroscopes to isolate blown capacitors, corroded pads, and short-circuited chips.</p>
 
-          <h3 style="font-size: var(--fs-400); margin-top:var(--space-4); margin-bottom:var(--space-2)">Key Features:
-          </h3>
-          <ul style="display:flex; flex-direction:column; gap: var(--space-2); margin-bottom: var(--space-5);">
-            <li>• SCADA & HMI custom layout designs (Ignition, FactoryTalk).</li>
-            <li>• Sensor installations and LoRaWAN/Zigbee boundary links.</li>
-            <li>• Industrial protocol mappings (Modbus RTU/TCP, OPC-UA, MQTT).</li>
-            <li>• Secure hardware edge-gateways configurations.</li>
+          <h3 style="font-size: var(--fs-400); margin-top:var(--space-4); margin-bottom:var(--space-2)">Key Features:</h3>
+          <ul style="display:flex; flex-direction:column; gap: var(--space-2); margin-bottom: var(--space-5); padding-left: 20px;">
+            <li>Micro-soldering trace reconstruction and copper pad repairs.</li>
+            <li>Power Management IC (PMIC) and charging chip replacements.</li>
+            <li>Diagnostic resistance mapping of major power rails.</li>
+            <li>Microscopic chemical cleaning for water-damaged boards.</li>
           </ul>
 
           <div
             style="background-color: var(--clr-green-soft-tint); padding: var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--accent-border);">
-            <strong>Measurable Outcome:</strong> Realtime visual telemetry streams, reducing manual sensor checks by up
-            to 90%.
+            <strong>Measurable Outcome:</strong> Successful logic board restoration on over 92% of liquid-spill repair cases, avoiding expensive board replacements.
           </div>
         </div>
         <div
           style="background-color:var(--bg-secondary); border: 1px solid var(--border-color); padding: var(--space-6); border-radius:var(--radius-xl); text-align:center;">
-          <svg viewBox="0 0 100 100"
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             style="width:160px; height:160px; color:var(--accent); margin:0 auto var(--space-4) auto;"
             aria-hidden="true">
-            <circle cx="50" cy="50" r="40" stroke="currentColor" stroke-width="2" fill="none" />
-            <circle cx="50" cy="50" r="10" fill="currentColor" />
-            <path d="M50 10 L50 90 M10 50 L90 50" stroke="currentColor" stroke-width="2" stroke-dasharray="4" />
+            <rect x="10" y="20" width="80" height="60" rx="6" />
+            <circle cx="50" cy="50" r="12" />
+            <path d="M50 10v10M50 80v10M10 50h10M80 50h10" />
+            <path d="M30 30l10 10M70 30L60 40M30 70l10-10M70 70L60 60" />
           </svg>
-          <h3>Operational Technology (OT) Layer</h3>
-          <p style="font-size: var(--fs-200); margin-bottom:0;">Fully certified electrical panels layouts (IP65
-            standard) with redundant power converters matching IEC industrial designs.</p>
+          <h3>Micro-soldering Station</h3>
+          <p style="font-size: var(--fs-200); margin-bottom:0;">All work is done under ESD-safe static-protected zones, using advanced hot-air systems and stereomicroscopes.</p>
         </div>
       </div>
     </section>
 
-    <!-- Section 2: Custom Enterprise Software -->
-    <section id="enterprise-software" class="section reveal-item" style="border-bottom: 1px solid var(--border-color)">
+    <!-- Section 2: MacBook & Laptop Repairs -->
+    <section id="laptop" class="section reveal-item" style="border-bottom: 1px solid var(--border-color)">
       <div class="container grid grid-cols-2 align-center">
         <div
           style="background-color:var(--bg-secondary); border: 1px solid var(--border-color); padding: var(--space-6); border-radius:var(--radius-xl); text-align:center; order:2;">
-          <svg viewBox="0 0 100 100"
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             style="width:160px; height:160px; color:var(--accent); margin:0 auto var(--space-4) auto;"
             aria-hidden="true">
-            <rect x="20" y="20" width="60" height="60" rx="10" stroke="currentColor" stroke-width="2" fill="none" />
-            <path d="M20 40 L80 40 M20 60 L80 60 M50 20 L50 80" stroke="currentColor" stroke-width="2" />
+            <rect x="20" y="25" width="60" height="42" rx="4" />
+            <path d="M10 73h80M38 73v4M62 73v4" />
           </svg>
-          <h3>Enterprise Technology (IT) Layer</h3>
-          <p style="font-size: var(--fs-200); margin-bottom:0;">Distributed microservices utilizing PostgreSQL database
-            clustering, high-throughput Redis caching layers, and Kafka queues.</p>
+          <h3>Laptop Diagnostics</h3>
+          <p style="font-size: var(--fs-200); margin-bottom:0;">Thermal loop profiles testing, battery charge cycles calibration, and physical safety diagnostic reports.</p>
         </div>
         <div style="order:1;">
-          <span class="section-tag">IT Systems</span>
-          <h2>Custom Enterprise Software & Scaled Backends</h2>
-          <p>We build customized, cloud-native backend applications that scale gracefully as transactional queries
-            surge. We design clean API pipelines to tie disparate database warehouses together, eliminating double
-            entries.</p>
-
-          <h3 style="font-size: var(--fs-400); margin-top:var(--space-4); margin-bottom:var(--space-2)">Key Features:
-          </h3>
-          <ul style="display:flex; flex-direction:column; gap: var(--space-2); margin-bottom: var(--space-5);">
-            <li>• Cloud-native architectures (AWS, Google Cloud, Azure).</li>
-            <li>• Microservices designs with robust API interfaces.</li>
-            <li>• Enterprise workflow automation engines (CRM, ERP linkers).</li>
-            <li>• Secure databases management and query clustering.</li>
+          <span class="section-tag">Laptop Services</span>
+          <h2>Premium MacBook & Laptop Repairs</h2>
+          <p>We replace displays, keyboards, and failing batteries, and optimize thermal setups for macOS and Windows laptops. We stock original-specification parts to ensure long-term device health and system performance.</p>
+ 
+          <h3 style="font-size: var(--fs-400); margin-top:var(--space-4); margin-bottom:var(--space-2)">Key Features:</h3>
+          <ul style="display:flex; flex-direction:column; gap: var(--space-2); margin-bottom: var(--space-5); padding-left: 20px;">
+            <li>Replacement display panel glass installations.</li>
+            <li>Keyboard switches and multi-touch trackpad swaps.</li>
+            <li>Battery cell replacements and charge calibration.</li>
+            <li>Thermal fan cleanups and premium liquid metal repasting.</li>
           </ul>
-
+ 
           <div
             style="background-color: var(--clr-green-soft-tint); padding: var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--accent-border);">
-            <strong>Measurable Outcome:</strong> p99 latency capped below 80ms under simulations of 30,000 concurrent
-            updates.
+            <strong>Measurable Outcome:</strong> Typical same-day turnaround on display swaps and battery changes, with standard diagnostic reviews completed in under 2 hours.
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Section 3: Control Systems PLC -->
-    <section id="control-systems" class="section reveal-item" style="border-bottom: 1px solid var(--border-color)">
+    <!-- Section 3: Smartphone Screen & Battery -->
+    <section id="smartphone" class="section reveal-item" style="border-bottom: 1px solid var(--border-color)">
       <div class="container grid grid-cols-2 align-center">
         <div>
-          <span class="section-tag">Controls</span>
-          <h2>PLC & HMI Programming</h2>
-          <p>Our controls engineers carry out hardware selections, design electrical safety loops, and write robust
-            controller software logic. We program systems to govern robotic arms, conveyors, pumps, and packaging
-            networks.</p>
-
-          <h3 style="font-size: var(--fs-400); margin-top:var(--space-4); margin-bottom:var(--space-2)">Key Features:
-          </h3>
-          <ul style="display:flex; flex-direction:column; gap: var(--space-2); margin-bottom: var(--space-5);">
-            <li>• PLC software logic development (Ladder, Structured Text).</li>
-            <li>• HMI touch interface layouts.</li>
-            <li>• Safety-instrumented systems (SIS) validations (IEC 61508).</li>
-            <li>• Loop calibrations and on-site wiring audits.</li>
+          <span class="section-tag">Mobile & Tablet</span>
+          <h2>Smartphone Screen & Battery Service</h2>
+          <p>Certified screen assemblies, battery calibrations, charging port replacements, and hardware diagnostics for iPhone, iPad, Samsung Galaxy, and other leading device lines.</p>
+ 
+          <h3 style="font-size: var(--fs-400); margin-top:var(--space-4); margin-bottom:var(--space-2)">Key Features:</h3>
+          <ul style="display:flex; flex-direction:column; gap: var(--space-2); margin-bottom: var(--space-5); padding-left: 20px;">
+            <li>Screen and display digitizer hardware replacements.</li>
+            <li>Port solder repairs (USB-C & Lightning connectors).</li>
+            <li>Internal battery health calibrations and safety scans.</li>
+            <li>Moisture cleanups and logic-board chemical cleaning.</li>
           </ul>
-
+ 
           <div
             style="background-color: var(--clr-green-soft-tint); padding: var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--accent-border);">
-            <strong>Measurable Outcome:</strong> Commissioning validation reports confirming zero PLC processor runtime
-            errors.
+            <strong>Measurable Outcome:</strong> Standard phone screen replacements completed in under 45 minutes on average by appointment.
           </div>
         </div>
         <div
           style="background-color:var(--bg-secondary); border: 1px solid var(--border-color); padding: var(--space-6); border-radius:var(--radius-xl); text-align:center;">
-          <svg viewBox="0 0 100 100"
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             style="width:160px; height:160px; color:var(--accent); margin:0 auto var(--space-4) auto;"
             aria-hidden="true">
-            <rect x="15" y="15" width="70" height="70" rx="4" stroke="currentColor" stroke-width="2" fill="none" />
-            <path d="M15 30 L85 30 M15 70 L85 70" stroke="currentColor" stroke-width="2" />
-            <circle cx="30" cy="50" r="5" fill="currentColor" />
-            <circle cx="50" cy="50" r="5" fill="currentColor" />
-            <circle cx="70" cy="50" r="5" fill="currentColor" />
+            <rect x="30" y="15" width="40" height="70" rx="6" />
+            <path d="M45 22h10M50 73h.01" />
           </svg>
-          <h3>Controller Logic Layer</h3>
-          <p style="font-size: var(--fs-200); margin-bottom:0;">PLC programs written and validated under structured
-            software guidelines, ensuring deterministic cycle updates.</p>
+          <h3>Smartphone Lab</h3>
+          <p style="font-size: var(--fs-200); margin-bottom:0;">Specialized vacuum separating tools and high-precision heat presses allow display separations without scraping metal borders.</p>
         </div>
       </div>
     </section>
 
-    <!-- Section 4: AI & Predictive Maintenance -->
-    <section id="predictive-maintenance" class="section reveal-item"
-      style="border-bottom: 1px solid var(--border-color)">
+    <!-- Section 4: Gaming PCs & Custom Desktops -->
+    <section id="gaming-pc" class="section reveal-item" style="border-bottom: 1px solid var(--border-color)">
       <div class="container grid grid-cols-2 align-center">
         <div
           style="background-color:var(--bg-secondary); border: 1px solid var(--border-color); padding: var(--space-6); border-radius:var(--radius-xl); text-align:center; order:2;">
-          <svg viewBox="0 0 100 100"
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             style="width:160px; height:160px; color:var(--accent); margin:0 auto var(--space-4) auto;"
             aria-hidden="true">
-            <path d="M10 80 Q 30 20, 50 50 T 90 20" stroke="currentColor" stroke-width="2" fill="none" />
-            <circle cx="50" cy="50" r="4" fill="var(--clr-green-neon)" />
-            <circle cx="90" cy="20" r="4" fill="var(--clr-green-neon)" />
+            <rect x="25" y="15" width="50" height="70" rx="4" />
+            <path d="M40 30h20M40 45h20M40 60h20M35 75h30" />
           </svg>
-          <h3>Analytical Intelligence Layer</h3>
-          <p style="font-size: var(--fs-200); margin-bottom:0;">Machine learning anomaly detectors trained on custom
-            baseline accelerometers vibration signatures.</p>
+          <h3>Rig Benchmarks</h3>
+          <p style="font-size: var(--fs-200); margin-bottom:0;">Synthesizing extreme stress benchmarks on hardware to verify system stability under heavy processing loads.</p>
         </div>
         <div style="order:1;">
-          <span class="section-tag">AI Systems</span>
-          <h2>AI & Predictive Maintenance Telemetry</h2>
-          <p>We deploy high-frequency accelerometers and temperature sensors to scan bearings housings. Our algorithms
-            trace sensor values dynamically and calculate equipment Remaining Useful Life (RUL) limits.</p>
-
-          <h3 style="font-size: var(--fs-400); margin-top:var(--space-4); margin-bottom:var(--space-2)">Key Features:
-          </h3>
-          <ul style="display:flex; flex-direction:column; gap: var(--space-2); margin-bottom: var(--space-5);">
-            <li>• Thermal imaging and vibration diagnostics setups.</li>
-            <li>• Anomaly detection models training.</li>
-            <li>• Remaining Useful Life (RUL) mathematical calculations.</li>
-            <li>• SMS/Email automated alert notifications.</li>
+          <span class="section-tag">Performance Rigs</span>
+          <h2>Gaming PCs & Performance Upgrades</h2>
+          <p>Custom loop liquid cooling layout design, graphics card diagnostic updates, storage array data recovery, and hardware cleanups for home rigs and high-end workstation systems.</p>
+ 
+          <h3 style="font-size: var(--fs-400); margin-top:var(--space-4); margin-bottom:var(--space-2)">Key Features:</h3>
+          <ul style="display:flex; flex-direction:column; gap: var(--space-2); margin-bottom: var(--space-5); padding-left: 20px;">
+            <li>GPU/CPU deep cleaning and thermal repasting operations.</li>
+            <li>SSD storage upgrades and secure data cloning.</li>
+            <li>Liquid cooling loop design, leak testing, and assembly.</li>
+            <li>Custom airflow tuning and hardware component overclocks.</li>
           </ul>
-
+ 
           <div
             style="background-color: var(--clr-green-soft-tint); padding: var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--accent-border);">
-            <strong>Measurable Outcome:</strong> Breakdown alerts triggered 48 hours prior to hardware faults,
-            preventing downtime.
+            <strong>Measurable Outcome:</strong> Average CPU/GPU temperature reductions of 15°C to 25°C under high processing benchmarks.
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: B2B Corporate Support & AMC -->
+    <section id="b2b" class="section reveal-item" style="border-bottom: 1px solid var(--border-color)">
+      <div class="container grid grid-cols-2 align-center">
+        <div>
+          <span class="section-tag">Enterprise Support</span>
+          <h2>B2B Corporate Device Fleet AMC</h2>
+          <p>We provide SLA-backed maintenance and express chip-level repair agreements for enterprise office laptops, workstations, network devices, and data storage arrays.</p>
+ 
+          <h3 style="font-size: var(--fs-400); margin-top:var(--space-4); margin-bottom:var(--space-2)">Key Features:</h3>
+          <ul style="display:flex; flex-direction:column; gap: var(--space-2); margin-bottom: var(--space-5); padding-left: 20px;">
+            <li>Dedicated account managers and prioritized repair dispatch lanes.</li>
+            <li>Bulk hardware sanitation, hardware upgrades, and clean-up audits.</li>
+            <li>Custom IT Asset Management lifecycle planning (hardware restoration vs replacement).</li>
+            <li>SLA compliance terms: 24-hour turnaround for critical employee devices.</li>
+          </ul>
+ 
+          <div
+            style="background-color: var(--clr-green-soft-tint); padding: var(--space-4); border-radius: var(--radius-md); border: 1px solid var(--accent-border);">
+            <strong>Measurable Outcome:</strong> Less than 2% average employee device downtime rate per month for contracted company clients.
+          </div>
+        </div>
+        <div
+          style="background-color:var(--bg-secondary); border: 1px solid var(--border-color); padding: var(--space-6); border-radius:var(--radius-xl); text-align:center;">
+          <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            style="width:160px; height:160px; color:var(--accent); margin:0 auto var(--space-4) auto;"
+            aria-hidden="true">
+            <path d="M40 30h40v50H40zM20 50h20v30H20zM30 30h20" />
+            <circle cx="60" cy="50" r="8" />
+            <circle cx="30" cy="65" r="4" />
+          </svg>
+          <h3>Enterprise SLAs</h3>
+          <p style="font-size: var(--fs-200); margin-bottom:0;">On-site support technicians, custom billing invoicing models, and scalable hardware service pricing packages.</p>
         </div>
       </div>
     </section>
@@ -282,18 +295,21 @@
 
   </main>
 
-  <!-- Inlined Footer -->
+  <!-- Sticky Footer -->
   <div data-include="assets/components/footer.html"></div>
 
+  <!-- Scroll-up clicker -->
   <button class="back-to-top" aria-label="Scroll back to top of the page">
-    <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor">
+    <svg viewBox="0 0 24 24" style="width:20px;height:20px;fill:currentColor" aria-hidden="true">
       <path d="M4 12l1.41 1.41L11 7.83V20h2V7.83l5.58 5.59L20 12l-8-8-8 8z" />
     </svg>
   </button>
 
+  <!-- Custom Cursor overlay nodes -->
   <div class="custom-cursor" aria-hidden="true"></div>
   <div class="custom-cursor-follower" aria-hidden="true"></div>
 
+  <!-- CDN scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"
     onerror="this.onerror=null;this.src='assets/vendor/three.min.js';"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
@@ -303,6 +319,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"
     onerror="this.onerror=null;this.src='assets/vendor/lenis.min.js';"></script>
 
+  <!-- Application Bootstrap Entrypoint -->
   <script type="module" src="assets/js/main.js"></script>
 </body>
 

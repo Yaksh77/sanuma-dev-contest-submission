@@ -1,6 +1,6 @@
 // Theme management module (Light/Dark theme)
 
-const THEME_KEY = 'sanuma-theme';
+const THEME_KEY = 'robuzta-theme';
 
 // Get current theme from localStorage or system preferences
 export function getSavedTheme() {

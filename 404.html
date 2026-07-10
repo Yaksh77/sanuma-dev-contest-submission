@@ -4,13 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Page Not Found — Sanuma India Pvt. Ltd.</title>
+  <title>Page Not Found — Robuzta Tech Labs</title>
   <meta name="description"
-    content="The page you were looking for couldn't be found. Return to the Sanuma India homepage.">
+    content="The page you were looking for couldn't be found. Return to the Robuzta Tech Labs homepage.">
   <meta name="robots" content="noindex, follow">
   <script>
     (() => {
-      const key = "sanuma-theme";
+      const key = "robuzta-theme";
       const theme =
         localStorage.getItem(key) ||
         (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
@@ -103,8 +103,11 @@
       <div class="error-code" aria-label="Error 404">404</div>
       <h1 style="font-size:var(--fs-600);margin-bottom:var(--space-3);">Page Not Found</h1>
       <p style="color:var(--text-muted);font-size:var(--fs-400);max-width:520px;margin-bottom:var(--space-6)">The page
-        you're looking for may have been moved, renamed, or might never have existed. Use the search below or navigate
-        to a known page.</p>
+        you're looking for may have been moved, renamed, or might never have existed. Navigate to a known page.</p>
+      <div style="display:flex;gap:var(--space-3);justify-content:center;flex-wrap:wrap;">
+        <a href="index.html" class="btn btn--primary" aria-label="Go to homepage">Go to Homepage</a>
+        <a href="contact.html" class="btn btn--outline" aria-label="Contact us">Book a Repair</a>
+      </div>
     </div>
   </main>
 

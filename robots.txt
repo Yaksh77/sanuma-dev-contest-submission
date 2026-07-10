@@ -8,4 +8,4 @@ Disallow: /assets/vendor/
 Crawl-delay: 5
 
 # Sitemap
-Sitemap: https://sanuma.in/sitemap.xml
+Sitemap: https://robuzta.com/sitemap.xml

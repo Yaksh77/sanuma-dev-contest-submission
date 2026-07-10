@@ -128,14 +128,14 @@ function submitForm(form) {
   // Simulate remote submit transition
   setTimeout(() => {
     // Cache inside localStorage for verification/manual testing
-    const submissions = JSON.parse(localStorage.getItem('sanuma_form_submissions') || '[]');
+    const submissions = JSON.parse(localStorage.getItem('robuzta_form_submissions') || '[]');
     submissions.push({
       id: Date.now(),
       formId: form.id || 'newsletter-or-contact',
       data: data,
       timestamp: new Date().toISOString()
     });
-    localStorage.setItem('sanuma_form_submissions', JSON.stringify(submissions));
+    localStorage.setItem('robuzta_form_submissions', JSON.stringify(submissions));
 
     // Reset button states
     if (submitBtn) {
