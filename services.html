@@ -10,18 +10,15 @@
   <link rel="canonical" href="">
 
   <script>
-    (function () {
-      var THEME_KEY = 'sanuma-theme';
-      var saved = localStorage.getItem(THEME_KEY);
-      var theme = (saved === 'dark' || saved === 'light')
-        ? saved
-        : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-
-      if (theme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-      }
-      var meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute('content', theme === 'dark' ? '#0A0A0A' : '#FFFFFF');
+    (() => {
+      const key = "sanuma-theme";
+      const theme =
+        localStorage.getItem(key) ||
+        (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.dataset.theme = theme;
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute("content", theme === "dark" ? "#0A0A0A" : "#FFFFFF");
     })();
   </script>
   <meta name="theme-color" content="#FFFFFF">
@@ -47,8 +44,6 @@
 </head>
 
 <body aria-busy="true">
-
-  <a href="#main-content" class="skip-to-content">Skip to main content</a>
   <div class="scroll-progress-bar" aria-hidden="true"></div>
 
   <div class="preloader" role="status" aria-label="Loading site components">
