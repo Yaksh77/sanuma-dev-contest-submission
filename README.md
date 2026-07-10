@@ -195,7 +195,7 @@ cd robuzta-repair-services
 # Python
 python -m http.server 8000
 
-# Node.js (if installed)
+# Node.js
 npx serve .
 
 # or open with VS Code "Live Server" extension
@@ -232,6 +232,32 @@ All design tokens (colours, spacing scale, typography, radii, shadows) live in `
 
 ## Accessibility
 
+- Skip-to-content link on every page
+- Visible focus states on all interactive elements
+- ARIA labels, roles, and live regions throughout
+- Custom focus trap in the mobile navigation overlay
+- Colour palette verified for high-contrast readability in both themes
+- Respects the `prefers-reduced-motion` media query
+
+## Browser Support
+
+Tested on current versions of Chrome, Firefox, Edge, and Safari (desktop and mobile). ES6 module support is required, which covers all evergreen browsers.
+
+## Submission Details
+
+As required by the contest guidelines:
+
+| Field | Value |
+|---|---|
+| Candidate Name | Yaksh Chudasama |
+| Email | chudasamayaksh77@gmail.com |
+| Live Website URL | https://sanuma-dev-contest-submission.vercel.app/ |
+| GitHub Repository | https://github.com/Yaksh77/sanuma-dev-contest-submission |
+| Submission Deadline | 10th July 2026, 7:00 PM IST |
+
+## Author
+
+Built by **[Yaksh77](https://github.com/Yaksh77)** for the Sanuma India Pvt. Ltd. Website Development Contest.
 - Skip-to-content link on every page
 - Visible focus states on all interactive elements
 - ARIA labels, roles, and live regions throughout

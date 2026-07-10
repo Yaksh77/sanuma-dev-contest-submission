@@ -2,7 +2,7 @@
 
 export function initForms() {
   const forms = document.querySelectorAll('form');
-  
+
   // Create accessibility live region for form errors if it doesn't exist
   let liveRegion = document.getElementById('form-live-announcer');
   if (!liveRegion) {
@@ -17,7 +17,7 @@ export function initForms() {
   forms.forEach(form => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      
+
       if (validateForm(form, liveRegion)) {
         submitForm(form);
       }
@@ -40,7 +40,7 @@ export function initForms() {
 function validateForm(form, announcer) {
   let isValid = true;
   let errorMessages = [];
-  
+
   // Reset all previous errors
   form.querySelectorAll('.form-group').forEach(group => {
     group.classList.remove('has-error');
@@ -63,7 +63,7 @@ function validateForm(form, announcer) {
     const value = input.value.trim();
     const group = input.closest('.form-group');
     const labelText = group?.querySelector('.form-label')?.textContent?.replace('*', '')?.trim() || 'Field';
-    
+
     let isFieldValid = true;
     let message = '';
 
@@ -81,17 +81,17 @@ function validateForm(form, announcer) {
     if (!isFieldValid) {
       isValid = false;
       errorMessages.push(message);
-      
+
       if (group) {
         group.classList.add('has-error');
-        
+
         // Add dynamic error label
         const errorId = `error-${input.id || 'field-' + index}`;
         const errorSpan = document.createElement('span');
         errorSpan.id = errorId;
         errorSpan.className = 'form-error';
         errorSpan.textContent = message;
-        
+
         group.appendChild(errorSpan);
         input.setAttribute('aria-describedby', errorId);
       }
@@ -137,8 +137,6 @@ function submitForm(form) {
     });
     localStorage.setItem('robuzta_form_submissions', JSON.stringify(submissions));
 
-    console.log('Form submission successful. Saved lead:', data);
-
     // Reset button states
     if (submitBtn) {
       submitBtn.classList.remove('btn--loading');
@@ -156,7 +154,7 @@ function submitForm(form) {
     successMsg.style.color = 'var(--accent)';
     successMsg.style.fontWeight = 'var(--fw-semibold)';
     successMsg.style.textAlign = 'center';
-    successMsg.textContent = 'Thank you! Your submission has been received successfully.';
+    successMsg.innerHTML = `<p style="color: var(--text-primary); font-size: var(--fs-200); margin:0;"><strong>Thank you!</strong> Your submission has been received successfull. We'll be in touch within 1 business day.</p>`;
 
     form.appendChild(successMsg);
     form.reset();
@@ -164,7 +162,7 @@ function submitForm(form) {
     // Remove success banner after 5 seconds
     setTimeout(() => {
       successMsg.remove();
-    }, 5000);
+    }, 7000);
 
   }, 1200);
 }

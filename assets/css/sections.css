@@ -376,6 +376,7 @@ will-change:transform;
 }
 
 .filter-btn {
+  color: var(--clr-white);
   background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   padding: var(--space-2) var(--space-5);
