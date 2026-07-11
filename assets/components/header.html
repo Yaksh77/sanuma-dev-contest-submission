@@ -14,7 +14,14 @@
         <nav class="nav-menu-container" aria-label="Main navigation">
             <ul class="nav-menu" role="list">
                 <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="services.html" class="nav-link">Services Hub</a></li>
+                <li class="nav-item dropdown">
+                    <a href="services.html" class="nav-link">Services Hub</a>
+                    <ul class="dropdown-menu" role="list">
+                        <li><a href="services.html" class="dropdown-link">Services Overview</a></li>
+                        <li><a href="estimator.html" class="dropdown-link">Smart Estimator</a></li>
+                        <li><a href="diagnosis.html" class="dropdown-link">Diagnosis Center</a></li>
+                    </ul>
+                </li>
                 <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
                 <li class="nav-item"><a href="blog.html" class="nav-link">Repair Tips Blog</a></li>
                 <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
@@ -37,5 +44,20 @@
                 <span class="hamburger-line"></span>
             </button>
         </div>
+    </div>
+    
+    <!-- Mobile Navigation Overlay (Inlined) -->
+    <div class="mobile-nav-overlay" aria-hidden="true">
+        <nav aria-label="Mobile navigation">
+            <ul class="mobile-menu" role="list">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="services.html" class="nav-link">Services Hub</a></li>
+                <li><a href="estimator.html" class="nav-link">Smart Estimator</a></li>
+                <li><a href="diagnosis.html" class="nav-link">Diagnosis Center</a></li>
+                <li><a href="about.html" class="nav-link">About Us</a></li>
+                <li><a href="blog.html" class="nav-link">Repair Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
     </div>
 </header>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Repair Estimator — Robuzta Tech Labs</title>
+  <meta name="description"
+    content="Configure your device repair online. Get an instant realistic quote range, timeline estimate, and schedule doorstep service in Ahmedabad.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="canonical" href="https://robuzta.com/estimator.html">
+
+  <!-- Core Theme Initialization (Prevent FOIT) -->
+  <script>
+    (() => {
+      const key = "robuzta-theme";
+      const theme =
+        localStorage.getItem(key) ||
+        (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.dataset.theme = theme;
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute("content", theme === "dark" ? "#0A0A0A" : "#FFFFFF");
+    })();
+  </script>
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- Swiper and Vendor CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    onerror="this.onerror=null;this.href='assets/vendor/swiper-bundle.min.css';">
+
+  <!-- CSS Design System -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/typography.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/themes.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/buttons.css">
+  <link rel="stylesheet" href="assets/css/cards.css">
+  <link rel="stylesheet" href="assets/css/forms.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/estimator.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body aria-busy="true">
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Page Loader Screen -->
+  <div class="preloader" role="status" aria-label="Loading site components">
+    <div class="preloader-logo"><span class="logo-accent">R</span>OBUZTA</div>
+    <div class="preloader-bar">
+      <div class="preloader-progress"></div>
+    </div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" role="region" aria-label="Announcement">
+    <span>Doorstep Tech Repairs: Free pickup & drop across Ahmedabad under 3 hours!</span>
+    <a href="contact.html" style="text-decoration: underline; color: var(--clr-white); font-weight: var(--fw-bold);"
+      aria-label="Book a pickup repair">Book Pickup Now</a>
+    <button class="announcement-close" aria-label="Close announcement bar">
+      <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor">
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Sticky Header -->
+  <div data-include="assets/components/header.html"></div>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs-bar" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs-list" role="list">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-separator" aria-hidden="true">/</li>
+        <li class="breadcrumb-item active" aria-current="page">Smart Repair Estimator</li>
+      </ol>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <section class="section section-sm bg-secondary">
+      <div class="container text-center">
+        <span class="section-tag">Interactive Quotes</span>
+        <h1 style="margin-bottom:var(--space-3)">Smart Repair Estimator</h1>
+        <p class="lead" style="max-width:700px; margin:0 auto;">Configure your device, choose diagnostic parameters, and get a realistic cost estimation instantly.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Progress Steps Tracker -->
+        <div class="estimator-progress" id="estimator-progress-bar">
+          <div class="estimator-progress-fill" id="progress-bar-fill"></div>
+          <button class="progress-step active" data-step="1" aria-label="Step 1: Choose Device">1</button>
+          <button class="progress-step" data-step="2" aria-label="Step 2: Brand & Model">2</button>
+          <button class="progress-step" data-step="3" aria-label="Step 3: Condition">3</button>
+          <button class="progress-step" data-step="4" aria-label="Step 4: Select Issue">4</button>
+          <button class="progress-step" data-step="5" aria-label="Step 5: Options & Details">5</button>
+        </div>
+
+        <div class="estimator-container">
+          <!-- Step Panels Column -->
+          <div class="card card--flagship" style="padding: var(--space-6);">
+            <form id="smart-estimator-form" novalidate>
+              
+              <!-- STEP 1: Device Type -->
+              <div class="estimator-step-panel active" data-step-panel="1">
+                <h2 style="font-size: var(--fs-500); margin-bottom: var(--space-4);">Select your device type</h2>
+                <div class="selection-grid">
+                  <label class="selection-card checked">
+                    <input type="radio" name="device_type" value="macbook" checked>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                      <line x1="2" y1="20" x2="22" y2="20" />
+                      <line x1="12" y1="17" x2="12" y2="20" />
+                    </svg>
+                    <span class="selection-card-title">MacBook</span>
+                  </label>
+
+                  <label class="selection-card">
+                    <input type="radio" name="device_type" value="laptop">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="2" y="4" width="20" height="14" rx="2" ry="2" />
+                      <line x1="12" y1="18" x2="12.01" y2="18" />
+                      <path d="M2 18h20" />
+                    </svg>
+                    <span class="selection-card-title">Laptop</span>
+                  </label>
+
+                  <label class="selection-card">
+                    <input type="radio" name="device_type" value="smartphone">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                      <line x1="12" y1="18" x2="12.01" y2="18" />
+                    </svg>
+                    <span class="selection-card-title">Smartphone</span>
+                  </label>
+
+                  <label class="selection-card">
+                    <input type="radio" name="device_type" value="gamingpc">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="4" y="2" width="16" height="20" rx="2" />
+                      <line x1="9" y1="6" x2="15" y2="6" />
+                      <line x1="9" y1="10" x2="15" y2="10" />
+                      <circle cx="12" cy="16" r="1.5" />
+                    </svg>
+                    <span class="selection-card-title">Gaming PC</span>
+                  </label>
+
+                  <label class="selection-card">
+                    <input type="radio" name="device_type" value="tablet">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+                      <line x1="12" y1="18" x2="12.01" y2="18" />
+                    </svg>
+                    <span class="selection-card-title">Tablet & iPad</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- STEP 2: Brand Selection -->
+              <div class="estimator-step-panel" data-step-panel="2">
+                <h2 style="font-size: var(--fs-500); margin-bottom: var(--space-4);">Select brand and model</h2>
+                
+                <div class="form-group">
+                  <label for="est-brand" class="estimator-field-label">Brand</label>
+                  <select id="est-brand" name="brand" class="form-input form-select" aria-label="Select Brand">
+                    <!-- Updated dynamically in JS -->
+                  </select>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label for="est-model" class="estimator-field-label">Model Name / Family</label>
+                  <input type="text" id="est-model" name="model" class="form-input" placeholder="e.g. MacBook Pro M1 14-inch" required>
+                </div>
+              </div>
+
+              <!-- STEP 3: Condition -->
+              <div class="estimator-step-panel" data-step-panel="3">
+                <h2 style="font-size: var(--fs-500); margin-bottom: var(--space-4);">What is the device condition?</h2>
+                <div class="selection-grid">
+                  <label class="selection-card checked">
+                    <input type="radio" name="condition" value="excellent" checked>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <circle cx="12" cy="12" r="10" />
+                      <line x1="12" y1="8" x2="12" y2="16" />
+                      <line x1="8" y1="12" x2="16" y2="12" />
+                    </svg>
+                    <span class="selection-card-title">Excellent</span>
+                    <span class="condition-description">Fully working, cosmetic wear only</span>
+                  </label>
+
+                  <label class="selection-card">
+                    <input type="radio" name="condition" value="good">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                    <span class="selection-card-title">Good</span>
+                    <span class="condition-description">Minor defects, fully functional</span>
+                  </label>
+
+                  <label class="selection-card">
+                    <input type="radio" name="condition" value="damaged">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                      <line x1="12" y1="9" x2="12" y2="13" />
+                      <line x1="12" y1="17" x2="12.01" y2="17" />
+                    </svg>
+                    <span class="selection-card-title">Damaged</span>
+                    <span class="condition-description">Cracked glass or liquid spills</span>
+                  </label>
+
+                  <label class="selection-card">
+                    <input type="radio" name="condition" value="dead">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="18" y1="6" x2="6" y2="18" />
+                      <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                    <span class="selection-card-title">Dead / Faulty</span>
+                    <span class="condition-description">No boot, dead battery, short circuit</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- STEP 4: Selected Issues -->
+              <div class="estimator-step-panel" data-step-panel="4">
+                <h2 style="font-size: var(--fs-500); margin-bottom: var(--space-4);">Select issues to diagnose (Multiple allowed)</h2>
+                <div class="selection-grid" id="issues-list">
+                  <!-- Updated dynamically based on selected Device Type -->
+                </div>
+              </div>
+
+              <!-- STEP 5: Service Level & Fulfillment -->
+              <div class="estimator-step-panel" data-step-panel="5">
+                <h2 style="font-size: var(--fs-500); margin-bottom: var(--space-4);">Choose priority and booking details</h2>
+                
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="est-priority" class="estimator-field-label">Service Priority</label>
+                    <select id="est-priority" name="priority" class="form-input form-select">
+                      <option value="standard">Standard Care (2-3 Business Days) - ₹0</option>
+                      <option value="express">Express Priority Tech (Same Day) - +₹1,499</option>
+                      <option value="rescue">Ultimate Board Rescue (Priority Schematics 24h) - +₹2,999</option>
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label for="est-fulfillment" class="estimator-field-label">Fulfillment Mode</label>
+                    <select id="est-fulfillment" name="fulfillment" class="form-input form-select">
+                      <option value="pickup">Free Doorstep Courier (Ahmedabad)</option>
+                      <option value="drop">In-Store Bench Walk-in</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="est-name" class="estimator-field-label">Your Name *</label>
+                    <input type="text" id="est-name" name="name" class="form-input" placeholder="Enter Full Name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="est-phone" class="estimator-field-label">Phone Number *</label>
+                    <input type="tel" id="est-phone" name="phone" class="form-input" placeholder="10-digit phone number" required>
+                  </div>
+                </div>
+
+                <div class="form-group" id="est-address-group">
+                  <label for="est-address" class="estimator-field-label">Pickup Address *</label>
+                  <input type="text" id="est-address" name="address" class="form-input" placeholder="Your street address in Ahmedabad" required>
+                </div>
+              </div>
+
+              <!-- Navigation Controls -->
+              <div class="step-actions">
+                <button type="button" class="btn btn--prev" id="btn-prev" style="visibility:hidden">Back</button>
+                <button type="button" class="btn btn--primary" id="btn-next">Next Step</button>
+              </div>
+
+            </form>
+          </div>
+
+          <!-- Summary Sidebar -->
+          <div class="estimator-summary-card">
+            <h3 class="summary-heading">Estimate Summary</h3>
+            <div id="summary-details">
+              <div class="summary-item"><span>Device Type:</span><strong id="sum-device-type">MacBook</strong></div>
+              <div class="summary-item"><span>Brand:</span><strong id="sum-brand">Apple</strong></div>
+              <div class="summary-item"><span>Condition:</span><strong id="sum-condition">Excellent</strong></div>
+              <div class="summary-item"><span>Reported Issue(s):</span><strong id="sum-issues" style="text-align:right">None Selected</strong></div>
+            </div>
+
+            <div class="summary-price-display">
+              <span class="status-badge status-badge--success" id="sum-timeframe">Same-day turnaround</span>
+              <div class="summary-price-val" id="sum-price-range">₹0</div>
+              <div style="font-size: var(--fs-100); color: var(--text-muted); margin-top: var(--space-1);">Estimated Repair Cost</div>
+            </div>
+
+            <ul style="padding:0; list-style:none; font-size: var(--fs-100); color: var(--text-muted); display:flex; flex-direction:column; gap: var(--space-2);">
+              <li>✓ Includes clean diagnostics benchmark tests</li>
+              <li>✓ Backed by 180-day parts & labor warranty</li>
+              <li>✓ Secure data custody standards</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <div data-include="assets/components/footer.html"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    onerror="this.onerror=null;this.src='assets/vendor/gsap.min.js';"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    onerror="this.onerror=null;this.src='assets/vendor/swiper-bundle.min.js';"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"
+    onerror="this.onerror=null;this.src='assets/vendor/lenis.min.js';"></script>
+
+  <!-- Estimator & Application Bootstrap -->
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+
+</html>

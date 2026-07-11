@@ -28,5 +28,17 @@
     "description": "Get an instant repair quote, schedule a doorstep device pickup, or visit our South Bopal, Ahmedabad service center.",
     "url": "contact.html",
     "tags": ["contact", "book repair", "address", "support phone", "ahmedabad", "south bopal"]
+  },
+  {
+    "title": "Smart Repair Estimator — Robuzta Tech Labs",
+    "description": "Calculate estimated Macbook, laptop, smartphone, or custom PC repair costs online with our multi-step interactive configurations.",
+    "url": "estimator.html",
+    "tags": ["estimator", "calculator", "quote", "repair cost", "pricing"]
+  },
+  {
+    "title": "Device Diagnosis Center — Robuzta Tech Labs",
+    "description": "Troubleshoot hardware and software symptoms online. Receive automated cause suggestions and recommended repair actions.",
+    "url": "diagnosis.html",
+    "tags": ["diagnosis", "troubleshoot", "symptoms", "causes", "fix device"]
   }
 ]

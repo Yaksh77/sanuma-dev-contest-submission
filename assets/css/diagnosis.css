@@ -1,0 +1,148 @@
+/* CSS Stylesheet for Device Diagnosis Center Page */
+
+.diagnosis-container {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: var(--space-7);
+  align-items: start;
+  margin-top: var(--space-6);
+}
+
+@media (max-width: 992px) {
+  .diagnosis-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+/* Symptom Checkboxes styling */
+.symptom-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.symptom-card {
+  background: var(--surface-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  position: relative;
+  user-select: none;
+}
+
+.symptom-card input {
+  accent-color: var(--accent);
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+}
+
+.symptom-card:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-2px);
+}
+
+.symptom-card.checked {
+  border-color: var(--accent);
+  background: var(--clr-green-soft-tint);
+}
+
+/* Diagnostic Results Panel */
+.analysis-results-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-lg);
+  display: none;
+  animation: revealUp var(--transition-normal) forwards;
+}
+
+.analysis-results-card.active {
+  display: block;
+}
+
+@keyframes revealUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.analysis-title {
+  font-family: var(--ff-display);
+  font-size: var(--fs-500);
+  color: var(--accent);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.confidence-meter-container {
+  background: var(--bg-secondary);
+  height: 8px;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-4);
+  border: 1px solid var(--border-color);
+}
+
+.confidence-meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--clr-green-brand), var(--clr-green-neon));
+  width: 0%;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cause-box {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.diag-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.diag-summary-item {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  text-align: center;
+}
+
+.diag-summary-val {
+  font-size: var(--fs-400);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  margin-top: var(--space-1);
+}
+
+/* Bullet lists */
+.tips-list {
+  padding-left: var(--space-4);
+  margin-bottom: var(--space-5);
+  font-size: var(--fs-200);
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
