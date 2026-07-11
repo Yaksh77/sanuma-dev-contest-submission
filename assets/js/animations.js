@@ -32,17 +32,28 @@ export function initAnimations() {
     }
     requestAnimationFrame(animateFollower);
 
-    // Hover states for link structures
-    const hoverables = document.querySelectorAll('a, button, .faq-trigger, .filter-btn, [role="button"]');
-    hoverables.forEach(el => {
-      el.addEventListener('mouseenter', () => {
-        cursor.classList.add('hovered');
-        follower.classList.add('hovered');
-      });
-      el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('hovered');
-        follower.classList.remove('hovered');
-      });
+    // Hover states for link structures using event delegation
+    document.addEventListener('mouseover', (e) => {
+      if (e.target && e.target.closest) {
+        const hoverable = e.target.closest('a, button, .faq-trigger, .filter-btn, [role="button"]');
+        if (hoverable) {
+          cursor.classList.add('hovered');
+          follower.classList.add('hovered');
+        }
+      }
+    });
+
+    document.addEventListener('mouseout', (e) => {
+      if (e.target && e.target.closest) {
+        const hoverable = e.target.closest('a, button, .faq-trigger, .filter-btn, [role="button"]');
+        if (hoverable) {
+          const related = e.relatedTarget;
+          if (!related || !related.closest || !related.closest('a, button, .faq-trigger, .filter-btn, [role="button"]')) {
+            cursor.classList.remove('hovered');
+            follower.classList.remove('hovered');
+          }
+        }
+      }
     });
   }
 

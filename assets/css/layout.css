@@ -53,6 +53,7 @@
 
 /* Responsive grids */
 @media (max-width: 1024px) {
+  .grid-cols-3,
   .grid-cols-4 {
     grid-template-columns: repeat(2, 1fr);
   }

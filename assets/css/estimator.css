@@ -1,0 +1,275 @@
+/* CSS Stylesheet for Smart Repair Estimator Page */
+
+.estimator-container {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: var(--space-7);
+  align-items: start;
+  margin-top: var(--space-6);
+}
+
+@media (max-width: 992px) {
+  .estimator-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+}
+
+/* Step Progress Indicator */
+.estimator-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: var(--space-7);
+  background: var(--bg-secondary);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+}
+
+.estimator-progress::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: var(--space-6);
+  right: var(--space-6);
+  height: 2px;
+  background: var(--border-color);
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.estimator-progress-fill {
+  position: absolute;
+  top: 50%;
+  left: var(--space-6);
+  height: 2px;
+  background: var(--accent);
+  transform: translateY(-50%);
+  z-index: 1;
+  transition: width var(--transition-normal);
+  width: 0%;
+}
+
+.progress-step {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-200);
+  color: var(--text-muted);
+  z-index: 2;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  position: relative;
+}
+
+.progress-step.active {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--clr-white);
+  box-shadow: var(--shadow-glow);
+}
+
+.progress-step.completed {
+  border-color: var(--accent);
+  background: var(--bg-primary);
+  color: var(--accent);
+}
+
+/* Step Section Layout */
+.estimator-step-panel {
+  display: none;
+  animation: stepFadeIn var(--transition-normal) forwards;
+}
+
+.estimator-step-panel.active {
+  display: block;
+}
+
+@keyframes stepFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Selection Cards */
+.selection-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.selection-card {
+  background: var(--surface-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5) var(--space-4);
+  text-align: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  position: relative;
+  user-select: none;
+}
+
+.selection-card input[type="radio"],
+.selection-card input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.selection-card svg {
+  width: 36px;
+  height: 36px;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.selection-card-title {
+  font-family: var(--ff-display);
+  font-weight: var(--fw-semibold);
+  font-size: var(--fs-200);
+  color: var(--text-primary);
+  margin-top: auto;
+}
+
+/* Checked States */
+.selection-card:hover {
+  border-color: var(--accent-border);
+  transform: translateY(-2px);
+}
+
+.selection-card.checked {
+  border-color: var(--accent);
+  background: var(--clr-green-soft-tint);
+}
+
+.selection-card.checked svg {
+  color: var(--accent);
+  transform: scale(1.1);
+}
+
+/* Detailed selection layouts */
+.condition-description {
+  font-size: var(--fs-100);
+  color: var(--text-muted);
+  margin-top: var(--space-2);
+}
+
+/* Summary Sidebar */
+.estimator-summary-card {
+  position: sticky;
+  top: 100px;
+  background: var(--surface-card);
+  border: 1px solid var(--accent-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-lg);
+}
+
+.estimator-summary-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, var(--clr-green-brand), var(--clr-green-neon));
+}
+
+.summary-heading {
+  font-size: var(--fs-400);
+  margin-bottom: var(--space-4);
+  font-family: var(--ff-display);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--space-3);
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-200);
+  margin-bottom: var(--space-3);
+  color: var(--text-secondary);
+}
+
+.summary-item strong {
+  color: var(--text-primary);
+}
+
+.summary-price-display {
+  text-align: center;
+  background: var(--bg-secondary);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-color);
+  margin-top: var(--space-5);
+  margin-bottom: var(--space-5);
+}
+
+.summary-price-val {
+  font-size: var(--fs-600);
+  font-family: var(--ff-display);
+  font-weight: var(--fw-bold);
+  color: var(--accent);
+}
+
+/* Buttons navigation */
+.step-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--border-color);
+}
+
+.btn--prev {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.btn--prev:hover {
+  background: var(--bg-secondary);
+}
+
+/* Custom inline form items */
+.estimator-field-label {
+  display: block;
+  font-weight: var(--fw-semibold);
+  margin-bottom: var(--space-2);
+}
+
+/* Status indicator bubble */
+.status-badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--fs-100);
+  font-weight: var(--fw-bold);
+  border-radius: var(--radius-pill);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-badge--success {
+  background-color: var(--clr-green-soft-tint);
+  color: var(--accent);
+  border: 1px solid var(--accent-border);
+}
