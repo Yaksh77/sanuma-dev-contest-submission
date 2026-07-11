@@ -1,0 +1,319 @@
+/* CSS Stylesheet for Interactive Repair Tracker & Lab Dashboard */
+
+.tracker-search-container {
+  max-width: 600px;
+  margin: 0 auto var(--space-7) auto;
+  text-align: center;
+}
+
+.tracker-dashboard {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: var(--space-6);
+  align-items: start;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all var(--transition-slow);
+}
+
+.tracker-dashboard.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 992px) {
+  .tracker-dashboard {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+  /* Reset any inline span-2 styles on mobile */
+  .tracker-dashboard > *,
+  .lab-console > * {
+    grid-column: span 1 !important;
+  }
+}
+
+
+/* Vertical Timeline */
+.tracker-timeline {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.tracker-timeline::before {
+  content: '';
+  position: absolute;
+  top: var(--space-3);
+  left: 20px;
+  bottom: var(--space-3);
+  width: 2px;
+  background: var(--border-color);
+  z-index: 1;
+}
+
+.timeline-step {
+  display: flex;
+  gap: var(--space-4);
+  position: relative;
+  z-index: 2;
+  transition: opacity var(--transition-normal);
+}
+
+.timeline-step.inactive {
+  opacity: 0.4;
+}
+
+.timeline-marker {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 2px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-200);
+  color: var(--text-muted);
+  transition: all var(--transition-normal);
+}
+
+.timeline-step.active .timeline-marker {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--clr-white);
+  box-shadow: var(--shadow-glow);
+}
+
+.timeline-step.completed .timeline-marker {
+  border-color: var(--accent);
+  background: var(--bg-primary);
+  color: var(--accent);
+}
+
+.timeline-step.completed .timeline-marker::after {
+  content: '✓';
+  font-size: var(--fs-300);
+}
+
+.timeline-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.timeline-title {
+  font-family: var(--ff-display);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-bold);
+  color: var(--text-primary);
+  margin-bottom: 2px;
+}
+
+.timeline-desc {
+  font-size: var(--fs-100);
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Lab Console Dashboard */
+.lab-console {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+@media (max-width: 768px) {
+  .lab-console {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}
+
+.console-panel {
+  background: var(--surface-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+}
+
+.console-panel-heading {
+  font-family: var(--ff-display);
+  font-size: var(--fs-300);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--space-4);
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* Simulated Microscope and Thermal Views */
+.simulated-viewport {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background-color: var(--clr-black);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1.5px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.simulated-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.9;
+  transition: transform var(--transition-slow), filter var(--transition-slow);
+}
+
+/* Microscope magnifier overlay loop */
+.viewport-radar-scan {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 201, 122, 0) 45%, rgba(0, 201, 122, 0.15) 50%, rgba(0, 201, 122, 0) 55%);
+  background-size: 100% 200%;
+  animation: radarScan 4s infinite linear;
+  pointer-events: none;
+}
+
+@keyframes radarScan {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 200%;
+  }
+}
+
+/* Console Log feed */
+.console-log-feed {
+  font-family: monospace;
+  font-size: 12px;
+  background: var(--clr-black);
+  color: #00FF66;
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  height: 120px;
+  overflow-y: auto;
+  list-style: none;
+  margin-bottom: var(--space-4);
+  line-height: 1.5;
+}
+
+.log-item::before {
+  content: '[SYSTEM] ';
+  color: #FFB300;
+}
+
+/* Canvas Graph container */
+.benchmark-canvas-container {
+  background: var(--clr-black);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  border: 1px solid var(--border-color);
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benchmark-canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Pulse badge */
+.pulse-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fs-100);
+  font-weight: var(--fw-bold);
+  color: var(--accent);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  border-radius: 50%;
+  animation: pulseGlow 1.5s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+    box-shadow: 0 0 8px var(--accent);
+  }
+  100% {
+    transform: scale(0.8);
+    opacity: 0.5;
+  }
+}
+
+/* Warranty card */
+.warranty-card {
+  margin-top: var(--space-7);
+  background: linear-gradient(135deg, var(--surface-card) 0%, var(--bg-secondary) 100%);
+  border: 2px dashed var(--accent-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-5);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .warranty-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.warranty-seal {
+  width: 80px;
+  height: 80px;
+  min-width: 80px;
+  border-radius: 50%;
+  background: var(--clr-green-soft-tint);
+  border: 2px solid var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-weight: var(--fw-extrabold);
+  font-size: var(--fs-200);
+  font-family: var(--ff-display);
+  transform: rotate(-15deg);
+  box-shadow: var(--shadow-sm);
+}

@@ -26,6 +26,7 @@
   padding: var(--space-4);
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
+  overflow: hidden;
 }
 
 .estimator-progress::before {
@@ -182,6 +183,7 @@
   border-radius: var(--radius-xl);
   padding: var(--space-6);
   box-shadow: var(--shadow-lg);
+  overflow: hidden;
 }
 
 .estimator-summary-card::before {
@@ -192,6 +194,7 @@
   width: 100%;
   height: 6px;
   background: linear-gradient(90deg, var(--clr-green-brand), var(--clr-green-neon));
+  opacity: 0.8;
 }
 
 .summary-heading {

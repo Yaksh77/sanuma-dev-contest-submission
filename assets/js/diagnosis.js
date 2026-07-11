@@ -242,11 +242,13 @@ export function initDiagnosis() {
   const hCost = document.getElementById('diag-h-cost');
 
   // Trigger dynamic symptom lists initially
+  setupDeviceCards();
   renderSymptoms();
 
   // Watch for device change to update symptom checkboxes
   diagDeviceRadios.forEach(radio => {
     radio.addEventListener('change', () => {
+      setupDeviceCards();
       renderSymptoms();
       // Hide results when changing device type
       if (emptyState && resultsPanel) {
@@ -272,10 +274,18 @@ export function initDiagnosis() {
     runDiagnosticLogic(selectedIds);
   });
 
+  function setupDeviceCards() {
+    diagDeviceRadios.forEach(radio => {
+      const card = radio.closest('.selection-card');
+      if (!card) return;
+      card.classList.toggle('checked', radio.checked);
+    });
+  }
+
   function renderSymptoms() {
-    const dev = form.querySelector('input[name="diag_device"]:checked').value;
-    const symptoms = SYMPTOMS_DATA[dev];
-    
+    const dev = form.querySelector('input[name="diag_device"]:checked');
+    const symptoms = SYMPTOMS_DATA[dev.value];
+
     symptomsList.innerHTML = '';
     symptoms.forEach(sym => {
       const label = document.createElement('label');
@@ -309,7 +319,7 @@ export function initDiagnosis() {
   function runDiagnosticLogic(symptomIds) {
     const dev = form.querySelector('input[name="diag_device"]:checked').value;
     const rules = DIAGNOSIS_RULES[dev] || [];
-    
+
     let match = null;
 
     // 1. Try to find matched triggers based on selected symptoms
@@ -346,7 +356,7 @@ export function initDiagnosis() {
     // Update fields
     document.getElementById('res-verdict').textContent = match.verdict;
     document.getElementById('res-confidence-text').textContent = `${match.confidence}% Match Confidence`;
-    
+
     const progressFill = document.getElementById('res-confidence-fill');
     progressFill.style.width = '0%';
     setTimeout(() => {

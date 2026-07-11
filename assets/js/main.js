@@ -14,6 +14,8 @@ import { initHero3D } from './hero3d.js';
 import { initMarqueeScroll } from './brands.js';
 import { initEstimator } from './estimator.js';
 import { initDiagnosis } from './diagnosis.js';
+import { initTracker } from './tracker.js';
+import { initShowcase } from './showcase.js';
 
 document.addEventListener('DOMContentLoaded', async () => {
   try {
@@ -35,6 +37,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     initMarqueeScroll();
     initEstimator();
     initDiagnosis();
+    initTracker();
+    initShowcase();
     
     // 3. Setup Three.JS if container is present on page
     initHero3D();

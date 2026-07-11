@@ -40,5 +40,17 @@
     "description": "Troubleshoot hardware and software symptoms online. Receive automated cause suggestions and recommended repair actions.",
     "url": "diagnosis.html",
     "tags": ["diagnosis", "troubleshoot", "symptoms", "causes", "fix device"]
+  },
+  {
+    "title": "Live Repair Tracker — Robuzta Tech Labs",
+    "description": "Track your device repair live. View technician notes, microscope lab feeds, stress benchmark graphs, and download your digital warranty certificate.",
+    "url": "tracker.html",
+    "tags": ["track repair", "repair status", "order tracking", "warranty", "lab dashboard"]
+  },
+  {
+    "title": "Before & After Repair Showcase — Robuzta Tech Labs",
+    "description": "Interact with our before-and-after comparison slider to inspect motherboard soldering, OLED screen replacements, and cooling repastes.",
+    "url": "showcase.html",
+    "tags": ["before after", "repair showcase", "motherboard", "soldering", "comparison"]
   }
 ]

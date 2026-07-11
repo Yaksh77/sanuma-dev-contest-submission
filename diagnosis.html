@@ -91,7 +91,8 @@
       <div class="container text-center">
         <span class="section-tag">Guided Troubleshooting</span>
         <h1 style="margin-bottom:var(--space-3)">Device Diagnosis Center</h1>
-        <p class="lead" style="max-width:700px; margin:0 auto;">Select symptoms to analyze likely hardware or software faults and receive recommended repair services.</p>
+        <p class="lead" style="max-width:700px; margin:0 auto;">Select symptoms to analyze likely hardware or software
+          faults and receive recommended repair services.</p>
       </div>
     </section>
 
@@ -101,12 +102,14 @@
           <!-- Input Form Panel -->
           <div class="card card--flagship" style="padding: var(--space-6);">
             <form id="device-diagnosis-form" novalidate>
-              
+
               <h2 style="font-size: var(--fs-400); margin-bottom: var(--space-4);">1. Select your device type</h2>
-              <div class="selection-grid" style="grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); margin-bottom: var(--space-6);">
+              <div class="selection-grid"
+                style="grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); margin-bottom: var(--space-6);">
                 <label class="selection-card checked">
                   <input type="radio" name="diag_device" value="macbook" checked>
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px; height:32px;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" style="width:32px; height:32px;">
                     <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
                     <line x1="2" y1="20" x2="22" y2="20" />
                     <line x1="12" y1="17" x2="12" y2="20" />
@@ -116,7 +119,8 @@
 
                 <label class="selection-card">
                   <input type="radio" name="diag_device" value="laptop">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px; height:32px;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" style="width:32px; height:32px;">
                     <rect x="2" y="4" width="20" height="14" rx="2" ry="2" />
                     <line x1="12" y1="18" x2="12.01" y2="18" />
                     <path d="M2 18h20" />
@@ -126,7 +130,8 @@
 
                 <label class="selection-card">
                   <input type="radio" name="diag_device" value="smartphone">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px; height:32px;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" style="width:32px; height:32px;">
                     <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
                     <line x1="12" y1="18" x2="12.01" y2="18" />
                   </svg>
@@ -135,7 +140,8 @@
 
                 <label class="selection-card">
                   <input type="radio" name="diag_device" value="gamingpc">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px; height:32px;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" style="width:32px; height:32px;">
                     <rect x="4" y="2" width="16" height="20" rx="2" />
                     <line x1="9" y1="6" x2="15" y2="6" />
                     <line x1="9" y1="10" x2="15" y2="10" />
@@ -146,7 +152,8 @@
 
                 <label class="selection-card">
                   <input type="radio" name="diag_device" value="tablet">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:32px; height:32px;">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round" style="width:32px; height:32px;">
                     <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
                     <line x1="12" y1="18" x2="12.01" y2="18" />
                   </svg>
@@ -160,7 +167,8 @@
               </div>
 
               <div class="flex justify-center" style="margin-top: var(--space-5);">
-                <button type="button" class="btn btn--primary" id="btn-run-diagnosis" style="width:100%; max-width:320px;">Analyze Symptoms</button>
+                <button type="button" class="btn btn--primary" id="btn-run-diagnosis"
+                  style="width:100%; max-width:320px;">Analyze Symptoms</button>
               </div>
 
             </form>
@@ -169,24 +177,29 @@
           <!-- Diagnostics Output Sidebar -->
           <div>
             <!-- Default Empty state helper -->
-            <div class="card" id="diagnosis-empty-state" style="text-align:center; padding: var(--space-7); display:flex; flex-direction:column; justify-content:center; height:100%;">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width: 48px; height: 48px; color: var(--text-muted); margin: 0 auto var(--space-4) auto;">
+            <div class="card" id="diagnosis-empty-state"
+              style="text-align:center; padding: var(--space-7); display:flex; flex-direction:column; justify-content:center; height:100%;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                style="width: 48px; height: 48px; color: var(--text-muted); margin: 0 auto var(--space-4) auto;">
                 <circle cx="12" cy="12" r="10" />
                 <line x1="12" y1="16" x2="12" y2="12" />
                 <line x1="12" y1="8" x2="12.01" y2="8" />
               </svg>
               <h3 style="font-size:var(--fs-400); margin-bottom:var(--space-2)">Awaiting Diagnosis</h3>
-              <p style="color:var(--text-muted); font-size:var(--fs-200); margin-bottom:0;">Select device parameters and check symptoms on the left to trigger the technical analysis engine.</p>
+              <p style="color:var(--text-muted); font-size:var(--fs-200); margin-bottom:0;">Select device parameters and
+                check symptoms on the left to trigger the technical analysis engine.</p>
             </div>
 
             <!-- Analysis results output card -->
             <div class="analysis-results-card" id="diagnosis-results-panel">
               <span class="section-tag" style="margin-bottom:var(--space-4)">Analysis Report</span>
               <h3 class="analysis-title" id="res-verdict">Power Rail Failure</h3>
-              
-              <div style="font-size:var(--fs-100); color:var(--text-secondary); margin-bottom:var(--space-1)">Confidence Score</div>
+
+              <div style="font-size:var(--fs-100); color:var(--text-secondary); margin-bottom:var(--space-1)">Confidence
+                Score</div>
               <div style="display:flex; justify-content:space-between; align-items:center;">
-                <span style="font-weight:var(--fw-bold); color:var(--text-primary);" id="res-confidence-text">85% Match</span>
+                <span style="font-weight:var(--fw-bold); color:var(--text-primary);" id="res-confidence-text">85%
+                  Match</span>
               </div>
               <div class="confidence-meter-container">
                 <div class="confidence-meter-fill" id="res-confidence-fill"></div>
@@ -194,17 +207,22 @@
 
               <div class="cause-box">
                 <strong>Likely Hardware Cause:</strong>
-                <p style="font-size: var(--fs-200); margin-top: var(--space-1); margin-bottom:0; color:var(--text-secondary);" id="res-cause-desc">A capacitor short circuit on the 12V PPBUS power line prevents the motherboard controller from powering the processor rails.</p>
+                <p style="font-size: var(--fs-200); margin-top: var(--space-1); margin-bottom:0; color:var(--text-secondary);"
+                  id="res-cause-desc">A capacitor short circuit on the 12V PPBUS power line prevents the motherboard
+                  controller from powering the processor rails.</p>
               </div>
 
               <div class="diag-summary-grid">
                 <div class="diag-summary-item">
                   <div style="font-size: var(--fs-100); color: var(--text-muted)">Recommended Service</div>
-                  <div class="diag-summary-val" id="res-service-rec" style="font-size: var(--fs-200); color: var(--accent); font-weight:var(--fw-bold)">Board Soldering</div>
+                  <div class="diag-summary-val" id="res-service-rec"
+                    style="font-size: var(--fs-200); color: var(--accent); font-weight:var(--fw-bold)">Board Soldering
+                  </div>
                 </div>
                 <div class="diag-summary-item">
                   <div style="font-size: var(--fs-100); color: var(--text-muted)">Estimated Repair Cost</div>
-                  <div class="diag-summary-val" id="res-cost-est" style="font-size: var(--fs-200); font-weight:var(--fw-bold)">₹6,500 - ₹9,500</div>
+                  <div class="diag-summary-val" id="res-cost-est"
+                    style="font-size: var(--fs-200); font-weight:var(--fw-bold)">₹6,500 - ₹9,500</div>
                 </div>
               </div>
 
@@ -216,9 +234,11 @@
               </ul>
 
               <!-- Fast Booking Form Inside Panel -->
-              <div style="border-top:1px solid var(--border-color); padding-top:var(--space-4); margin-top:var(--space-4)">
-                <h4 style="font-size:var(--fs-200); margin-bottom:var(--space-3)">Schedule Diagnostic Solder / Inspection</h4>
-                
+              <div
+                style="border-top:1px solid var(--border-color); padding-top:var(--space-4); margin-top:var(--space-4)">
+                <h4 style="font-size:var(--fs-200); margin-bottom:var(--space-3)">Schedule Diagnostic Solder /
+                  Inspection</h4>
+
                 <form id="diag-booking-form" novalidate>
                   <input type="hidden" id="diag-h-device" name="device" value="">
                   <input type="hidden" id="diag-h-verdict" name="verdict" value="">
@@ -226,16 +246,20 @@
                   <input type="hidden" id="diag-h-cost" name="cost" value="">
 
                   <div class="form-group">
-                    <input type="text" name="name" class="form-input" placeholder="Your Name" required style="padding:var(--space-2) var(--space-3)">
+                    <input type="text" name="name" class="form-input" placeholder="Your Name" required
+                      style="padding:var(--space-2) var(--space-3)">
                   </div>
                   <div class="form-group">
-                    <input type="tel" name="phone" class="form-input" placeholder="Your Phone Number" required style="padding:var(--space-2) var(--space-3)">
+                    <input type="tel" name="phone" class="form-input" placeholder="Your Phone Number" required
+                      style="padding:var(--space-2) var(--space-3)">
                   </div>
                   <div class="form-group" id="diag-address-field">
-                    <input type="text" name="address" class="form-input" placeholder="Delivery Address for Pickup" required style="padding:var(--space-2) var(--space-3)">
+                    <input type="text" name="address" class="form-input" placeholder="Delivery Address for Pickup"
+                      required style="padding:var(--space-2) var(--space-3)">
                   </div>
-                  
-                  <button type="submit" class="btn btn--primary" style="width:100%; padding:var(--space-3)">Book Diagnostics</button>
+
+                  <button type="submit" class="btn btn--primary" style="width:100%; padding:var(--space-3)">Book
+                    Diagnostics</button>
                 </form>
               </div>
 

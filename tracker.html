@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Device Repair Tracker — Robuzta Tech Labs</title>
+  <meta name="description"
+    content="Enter your repair tracking reference number to access our real-time lab dashboard. Inspect live technician notes, microscope views, and benchmarks.">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="canonical" href="https://robuzta.com/tracker.html">
+
+  <!-- Core Theme Initialization (Prevent FOIT) -->
+  <script>
+    (() => {
+      const key = "robuzta-theme";
+      const theme =
+        localStorage.getItem(key) ||
+        (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.dataset.theme = theme;
+      document
+        .querySelector('meta[name="theme-color"]')
+        ?.setAttribute("content", theme === "dark" ? "#0A0A0A" : "#FFFFFF");
+    })();
+  </script>
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- Vendor CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    onerror="this.onerror=null;this.href='assets/vendor/swiper-bundle.min.css';">
+
+  <!-- CSS Design System -->
+  <link rel="stylesheet" href="assets/css/variables.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/typography.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+  <link rel="stylesheet" href="assets/css/themes.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/buttons.css">
+  <link rel="stylesheet" href="assets/css/cards.css">
+  <link rel="stylesheet" href="assets/css/forms.css">
+  <link rel="stylesheet" href="assets/css/header.css">
+  <link rel="stylesheet" href="assets/css/footer.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/tracker.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+
+<body aria-busy="true">
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar" aria-hidden="true"></div>
+
+  <!-- Page Loader Screen -->
+  <div class="preloader" role="status" aria-label="Loading site components">
+    <div class="preloader-logo"><span class="logo-accent">R</span>OBUZTA</div>
+    <div class="preloader-bar">
+      <div class="preloader-progress"></div>
+    </div>
+  </div>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar" role="region" aria-label="Announcement">
+    <span>Doorstep Tech Repairs: Free pickup & drop across Ahmedabad under 3 hours!</span>
+    <a href="contact.html" style="text-decoration: underline; color: var(--clr-white); font-weight: var(--fw-bold);"
+      aria-label="Book a pickup repair">Book Pickup Now</a>
+    <button class="announcement-close" aria-label="Close announcement bar">
+      <svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:currentColor">
+        <path
+          d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- Sticky Header Include -->
+  <div data-include="assets/components/header.html"></div>
+
+  <!-- Breadcrumbs -->
+  <div class="breadcrumbs-bar" aria-label="Breadcrumb">
+    <div class="container">
+      <ol class="breadcrumbs-list" role="list">
+        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+        <li class="breadcrumb-separator" aria-hidden="true">/</li>
+        <li class="breadcrumb-item active" aria-current="page">Repair Tracker</li>
+      </ol>
+    </div>
+  </div>
+
+  <main id="main-content">
+    <section class="section section-sm bg-secondary">
+      <div class="container text-center">
+        <span class="section-tag">Live Order Console</span>
+        <h1 style="margin-bottom:var(--space-3)">Live Repair Tracker & Dashboard</h1>
+        <p class="lead" style="max-width:750px; margin: 0 auto;">Access real-time diagnostics, load telemetry graphs, and microscopic board review updates directly from our diagnostic workbench.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        
+        <!-- Search Bar Reference Input -->
+        <div class="tracker-search-container">
+          <label for="order-ref-input" class="form-label" style="font-size:var(--fs-200); font-weight:var(--fw-semibold); margin-bottom:var(--space-2); display:block;">Enter your Order Reference Code</label>
+          <div style="display:flex; gap:var(--space-2);">
+            <input type="text" id="order-ref-input" class="form-input" placeholder="e.g. ROB-BOARD-88" style="text-transform:uppercase" required>
+            <button type="button" class="btn btn--primary" id="btn-track-submit">Track Device</button>
+          </div>
+          <p style="font-size: var(--fs-100); color:var(--text-muted); margin-top:var(--space-2)">Try standard test codes: <strong style="color:var(--text-primary)">ROB-BOARD-88</strong> (MacBook board) or <strong style="color:var(--text-primary)">ROB-SCREEN-45</strong> (iPhone Screen).</p>
+        </div>
+
+        <!-- Dashboard Panel Viewport (hidden until valid code entered) -->
+        <div class="tracker-dashboard" id="tracker-dashboard-panel" style="display:none">
+          
+          <!-- LEFT COLUMN: Timeline Checkpoints -->
+          <div class="card card--flagship" style="padding: var(--space-5);">
+            <h3 class="summary-heading" style="margin-bottom:var(--space-5)">Repair Status Checkpoints</h3>
+            
+            <ol class="tracker-timeline" id="timeline-steps-list" role="list">
+              <!-- Step 1 -->
+              <li class="timeline-step" data-step-id="1">
+                <div class="timeline-marker">1</div>
+                <div class="timeline-content">
+                  <h4 class="timeline-title">Device Received & Logged</h4>
+                  <span class="timeline-desc">Secured on anti-static inventory mats. Chassis safety scans completed successfully.</span>
+                </div>
+              </li>
+              <!-- Step 2 -->
+              <li class="timeline-step" data-step-id="2">
+                <div class="timeline-marker">2</div>
+                <div class="timeline-content">
+                  <h4 class="timeline-title">Microscope Diagnostics</h4>
+                  <span class="timeline-desc">Logic rail resistance mappings, thermal board profiles scans, and schema review.</span>
+                </div>
+              </li>
+              <!-- Step 3 -->
+              <li class="timeline-step" data-step-id="3">
+                <div class="timeline-marker">3</div>
+                <div class="timeline-content">
+                  <h4 class="timeline-title">Precision Chip Solder / Fix</h4>
+                  <span class="timeline-desc">In-house stereomicroscope micro-soldering, capacitor replacements, and rail trace fixes.</span>
+                </div>
+              </li>
+              <!-- Step 4 -->
+              <li class="timeline-step" data-step-id="4">
+                <div class="timeline-marker">4</div>
+                <div class="timeline-content">
+                  <h4 class="timeline-title">Benchmarking & Stress Test</h4>
+                  <span class="timeline-desc">CPU/GPU temperature loops, load stress profiling, and memory hardware scans.</span>
+                </div>
+              </li>
+              <!-- Step 5 -->
+              <li class="timeline-step" data-step-id="5">
+                <div class="timeline-marker">5</div>
+                <div class="timeline-content">
+                  <h4 class="timeline-title">Restored & Out for Delivery</h4>
+                  <span class="timeline-desc">Safe padded transit packing and courier riders route assignment.</span>
+                </div>
+              </li>
+            </ol>
+          </div>
+
+          <!-- RIGHT COLUMN: Lab Bench Console -->
+          <div class="lab-console">
+            
+            <!-- Panel 1: Tech Bench Log -->
+            <div class="console-panel">
+              <h3 class="console-panel-heading">
+                <span class="pulse-dot"></span>
+                <span>Active Work Bench Logs</span>
+              </h3>
+              
+              <ul class="console-log-feed" id="console-logs-list" aria-live="polite" aria-label="Live technician work bench logs">
+                <!-- Log entries printed by tracker.js -->
+              </ul>
+
+              <div class="cause-box" style="margin-bottom: 0;">
+                <div style="font-size: var(--fs-100); color: var(--text-muted)">Technician Assigned</div>
+                <strong id="tech-name" style="font-size: var(--fs-200); color:var(--text-primary)">Amit Trivedi (Level 3 Solder Expert)</strong>
+                <p style="font-size: var(--fs-100); color: var(--text-muted); margin-top:var(--space-2); margin-bottom:0;" id="tech-notes">"Liquid corrosion cleared from PPBUS capacitor line. Reconstructed pad traces under 40x zoom loop."</p>
+              </div>
+            </div>
+
+            <!-- Panel 2: Live Viewport (Microscope / Thermal Cam) -->
+            <div class="console-panel">
+              <h3 class="console-panel-heading" id="res-viewport-title">
+                Microscope Viewport [Live]
+              </h3>
+              
+              <div class="simulated-viewport">
+                <img src="" alt="Live Lab Microscope Stream" class="simulated-img" id="console-viewport-img">
+                <div class="viewport-radar-scan"></div>
+              </div>
+              <p style="font-size: var(--fs-100); color:var(--text-muted); text-align:center; margin-top:var(--space-2); margin-bottom:0;">Dynamic live simulation of technician camera loop view.</p>
+            </div>
+
+            <!-- Panel 3: Temperature Benchmarks Graph -->
+            <div class="console-panel" style="grid-column: span 2;">
+              <h3 class="console-panel-heading">
+                Hardware Load Stress Benchmarks
+              </h3>
+              
+              <div class="benchmark-canvas-container">
+                <canvas class="benchmark-canvas" id="benchmark-canvas"></canvas>
+              </div>
+              
+              <div style="display:flex; justify-content:space-between; font-size:var(--fs-100); color:var(--text-muted); margin-top:var(--space-2)">
+                <span>Active Benchmark: <strong style="color:var(--text-primary)">CPU / GPU Load loops</strong></span>
+                <span>Diagnostics Status: <strong style="color:var(--clr-green-neon)" id="diag-bench-verdict">Normal (Stress Passed)</strong></span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Bottom Panel: Digital Warranty Card -->
+          <div class="warranty-card" style="grid-column: span 2;" id="order-warranty-banner">
+            <div>
+              <h3 style="font-family: var(--ff-display); font-size: var(--fs-400); margin-bottom: var(--space-1);">Digi-Warranty Certificate Ready</h3>
+              <p style="font-size: var(--fs-200); color: var(--text-secondary); margin-bottom:0;">All work is certified under warranty serial: <strong id="warranty-serial-code">ROB-W-2026-X8</strong>. Valid for 180 days on replaced hardware components and micro-soldering labor.</p>
+            </div>
+            
+            <div style="display:flex; align-items:center; gap:var(--space-4)">
+              <div class="warranty-seal">180 DAYS</div>
+              <a href="#" class="btn btn--outline" id="btn-download-cert" style="white-space:nowrap;">Download PDF Certificate</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Include -->
+  <div data-include="assets/components/footer.html"></div>
+
+  <!-- CDN scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    onerror="this.onerror=null;this.src='assets/vendor/gsap.min.js';"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+    onerror="this.onerror=null;this.src='assets/vendor/swiper-bundle.min.js';"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.34/dist/lenis.min.js"
+    onerror="this.onerror=null;this.src='assets/vendor/lenis.min.js';"></script>
+
+  <!-- Bootstrapper module -->
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+
+</html>
