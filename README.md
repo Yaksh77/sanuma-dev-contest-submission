@@ -18,6 +18,7 @@
 - [Overview](#overview)
 - [Live Demo & Repository](#live-demo--repository)
 - [Objective & Reference](#objective--reference)
+- [Known Issues](#known-issues)
 - [Tech Stack](#tech-stack)
 - [Contest Compliance](#contest-compliance)
 - [Key Features](#key-features)
@@ -31,19 +32,20 @@
 - [Browser Support](#browser-support)
 - [Submission Details](#submission-details)
 - [Author](#author)
+- [License](#license)
 
 ---
 
 ## Overview
 
-This repository is a complete business-transformation rebuild of **robuzta.com** — the official website for **Robuzta Tech Labs**, a premium device repair laboratory based in South Bopal, Ahmedabad.
+This repository is a business-transformation rebuild of **robuzta.com**, redesigned around a premium **device-repair-services** business — MacBook, laptop, smartphone, tablet, and gaming-PC repair — rather than the industrial-automation concept used in an earlier submission.
 
-The site covers:
-- **Consumer repair services**: MacBook, Laptop, Smartphone, Tablet, Gaming PC, Chip-level Logic Board Micro-soldering, Data Recovery
-- **B2B corporate AMC**: SLA-backed fleet device maintenance for companies and schools
-- A repair-focused blog, about page, service booking form, and legal pages
+The site now covers:
+- **Consumer repair services**: MacBook, laptop, smartphone, tablet, gaming PC, chip-level logic-board micro-soldering, data recovery
+- **Interactive tools**: a guided symptom-based diagnosis center, a multi-step repair cost estimator, and a live repair-status tracker
+- A before/after repair showcase, a device-care blog, a booking/contact flow, and legal pages
 
-**Design direction:** premium dark-mode-first interface inspired by Apple (layouts), Stripe (forms), Linear (UX clarity), Vercel (dark borders/glows) and Framer (purposeful animation) — using a Three.js hero, GSAP scroll choreography, and a component-driven HTML structure with no framework or build step required.
+**Design direction:** a premium dark-mode-first interface inspired by Apple (layout discipline), Stripe (form clarity), Linear (UX precision), Vercel (dark borders/glow accents), and Framer (purposeful motion) — built on a Three.js hero, GSAP scroll choreography, and a component-driven HTML structure, with no framework or build step required.
 
 ## Live Demo & Repository
 
@@ -55,13 +57,22 @@ The site covers:
 
 ## Objective & Reference
 
-Per the contest brief, the reference website (`robuzta.com`) was used only to understand the business domain, location, contact details, and service offerings — not as a design or content source. Every page, section, layout, and copy block in this repository was independently designed and written for Robuzta Tech Labs' brand and repair service catalogue.
+Per the contest brief, the reference website (`robuzta.com`) is meant to be used only to understand the business domain and its service offerings — not as a source for brand name, contact details, or copy. See [Known Issues](#known-issues) for where the current build still needs to be brought in line with that requirement.
+
+## Known Issues
+
+| Issue | Where | Fix needed |
+|---|---|---|
+| Site is branded **"Robuzta Tech Labs"** throughout (64 occurrences) | Every page `<title>`, `assets/components/header.html`, `footer.html`, `localStorage` key `robuzta-theme` | Rename to Sanuma or another original brand across all pages/components/scripts |
+| Real-looking street address, phone number, and precise GPS coordinates | `assets/js/seo.js` (JSON-LD `LocalBusiness`), `contact.html`, `footer.html` | Replace with fictional or Sanuma's actual business details |
+| `sitemap.xml` and this README were out of date vs. the current page set | `sitemap.xml` (11 URLs), README (previously listed 8 pages) | Regenerate sitemap; this README has been updated to reflect all 12 current pages |
+| Some imagery is hot-linked from Unsplash (`assets/js/showcase.js`, `tracker.js`) rather than hosted locally | `showcase.js`, `tracker.js` | Fine for a contest demo, but move to owned/local assets before production use |
 
 ## Tech Stack
 
 | Layer | Technology | Notes |
 |---|---|---|
-| Markup | Semantic HTML5 | 8 hand-authored pages |
+| Markup | Semantic HTML5 | 12 hand-authored pages |
 | Styling | Vanilla CSS3 | Custom-property design tokens, no preprocessor |
 | Logic | Vanilla JavaScript (ES6 modules) | No framework, no bundler |
 | 3D Hero | [Three.js](https://threejs.org/) | CDN-first with local `/assets/vendor` fallback |
@@ -70,7 +81,7 @@ Per the contest brief, the reference website (`robuzta.com`) was used only to un
 | Carousels | [Swiper.js](https://swiperjs.com/) | CDN-first with local fallback |
 | Data | Static JSON (`data/content.json`) | Powers client-side search index |
 
-No `npm install`, no bundler, and no server runtime is required at any point — the site is deployable as-is to any static host.
+No `npm install`, no bundler, and no server runtime is required — the site is deployable as-is to any static host.
 
 ## Contest Compliance
 
@@ -79,50 +90,57 @@ No `npm install`, no bundler, and no server runtime is required at any point —
 | Frontend-only (HTML5 / CSS3 / vanilla JS) | ✅ No PHP, Node.js, or server-side code |
 | No database or backend | ✅ All content is static HTML/JSON |
 | Fully responsive (desktop / tablet / mobile) | ✅ Dedicated `responsive.css` breakpoint layer |
-| SEO optimized | ✅ Per-page metadata, JSON-LD LocalBusiness schema, sitemap, robots.txt |
+| SEO optimized | ✅ Per-page metadata, JSON-LD schema, sitemap, robots.txt |
 | Deployable without a build step | ✅ Static assets only |
 | Permitted libraries only | ✅ GSAP, Three.js, Swiper, Lenis (all allowed) |
+| Original business identity (not copied from reference) | ⚠️ **Not yet met** — see [Known Issues](#known-issues) |
 
 ## Key Features
 
-- **Dark/light theme toggle** with persisted preference (`robuzta-theme` localStorage key)
+- **Guided Device Diagnosis Center** (`diagnosis.html`) — symptom-based selector per device type with a rules-driven diagnostic engine (`diagnosis.js`)
+- **Smart Repair Estimator** (`estimator.html`) — multi-step configurator (device → brand → issue) producing a price and turnaround estimate (`estimator.js`)
+- **Live Repair Tracker** (`tracker.html`) — status dashboard with technician notes, timestamped logs, and a live diagnostics viewport (`tracker.js`)
+- **Before/After Showcase** (`showcase.html`) — interactive inspection-room view of repair case studies with hotspot annotations (`showcase.js`)
+- **Dark/light theme toggle** with persisted preference
 - **Three.js animated hero background** that checks `deviceMemory` / `hardwareConcurrency` and falls back to a CSS-only hero on low-end devices
-- **GSAP scroll-driven animations** combined with an `IntersectionObserver` reveal utility for lightweight, framework-free motion
-- **Reusable HTML partials** (header, footer, CTA, FAQ, testimonials, newsletter) loaded via a lightweight fetch-based include system (`include.js`)
+- **GSAP scroll-driven animations** combined with an `IntersectionObserver` reveal utility
+- **Reusable HTML partials** (header, footer, CTA, FAQ, testimonials, newsletter) loaded via a fetch-based include system (`include.js`)
 - **Client-side site search** driven by a static JSON content index
-- **Device repair booking form** with service category checkboxes, budget selector, and full client-side validation
-- **B2B Corporate AMC section** with SLA breakdown, fleet pricing, and account manager details
+- **Repair booking form** with client-side validation
 - **Accessible mobile navigation** with a custom focus trap and skip-to-content link
-- **JSON-LD LocalBusiness schema** dynamically injected with South Bopal coordinates, phone number, and opening hours
-- **Google Maps embed** for the South Bopal, Ahmedabad service center
-- **Custom 404 page** and legal pages (Privacy Policy, Terms & Conditions)
+- **JSON-LD `LocalBusiness` schema** dynamically injected per page (`seo.js`) — update the contact details here per [Known Issues](#known-issues)
+- Custom 404 page and legal pages (Privacy Policy, Terms & Conditions)
 
 ## Project Structure
 
 ```
 robuzta-repair-services/
-├── index.html                  Homepage — Hero, device categories, workflow, calculator
+├── index.html                  Homepage — hero, device categories, workflow
 ├── services.html               Full repair capability catalogue
-├── about.html                  Lab story, values, timeline, team
-├── blog.html                   Repair tips & diagnostics blog
-├── contact.html                Repair booking form, map & contact info
-├── privacy-policy.html         DPDP Act 2023-aligned policy
-├── terms.html                  Legal terms
-├── 404.html                    Custom not-found page
+├── about.html                  Company story, values, timeline, founder
+├── blog.html                   Device care & diagnostics articles index
+├── diagnosis.html              Guided symptom-based diagnosis center
+├── estimator.html              Multi-step repair cost estimator
+├── tracker.html                Live repair status tracker
+├── showcase.html                Before/after repair inspection room
+├── contact.html                 Booking form, map & contact info
+├── privacy-policy.html
+├── terms.html
+├── 404.html
 ├── robots.txt
-├── sitemap.xml                 7 indexed URLs
+├── sitemap.xml                  11 indexed URLs (regenerate after any page changes)
 │
 ├── data/
-│   └── content.json            Search index / page metadata
+│   └── content.json             Search index / page metadata
 │
 └── assets/
     ├── css/
     │   ├── variables.css         Design tokens (colour, spacing, type scale)
-    │   ├── base.css              Resets & global styles
+    │   ├── base.css               Resets & global styles
     │   ├── typography.css
-    │   ├── layout.css            Grid / container / flex utilities
+    │   ├── layout.css              Grid / container / flex utilities
     │   ├── utilities.css
-    │   ├── themes.css            Light / dark mode overrides
+    │   ├── themes.css               Light / dark mode overrides
     │   ├── animations.css
     │   ├── buttons.css
     │   ├── cards.css
@@ -131,25 +149,34 @@ robuzta-repair-services/
     │   ├── footer.css
     │   ├── hero.css
     │   ├── sections.css
-    │   └── responsive.css        Breakpoint overrides
+    │   ├── founder.css              About-page founder section
+    │   ├── diagnosis.css            Diagnosis Center layout
+    │   ├── estimator.css             Estimator layout
+    │   ├── tracker.css                Tracker dashboard layout
+    │   ├── showcase.css                Showcase inspection-room layout
+    │   └── responsive.css               Breakpoint overrides
     │
     ├── js/
-    │   ├── main.js               Entry point — orchestrates all modules
-    │   ├── theme.js              Light/dark toggle & persistence
-    │   ├── navigation.js         Header scroll, mobile nav, dropdowns
-    │   ├── scroll.js             Lenis smooth-scroll init
-    │   ├── hero3d.js             Three.js hero background
-    │   ├── animations.js         GSAP scroll animations
-    │   ├── observer.js           IntersectionObserver reveal utility
-    │   ├── include.js            HTML partial fetcher
-    │   ├── forms.js              Client-side form validation
-    │   ├── search.js             Client-side site search
-    │   ├── seo.js                JSON-LD LocalBusiness schema injection
-    │   ├── carousel.js           Swiper.js setup
-    │   ├── brands.js             Partner logo marquee
-    │   └── utils.js              Shared helpers
+    │   ├── main.js                  Entry point — orchestrates all modules
+    │   ├── theme.js                  Light/dark toggle & persistence
+    │   ├── navigation.js              Header scroll, mobile nav, dropdowns
+    │   ├── scroll.js                   Lenis smooth-scroll init
+    │   ├── hero3d.js                    Three.js hero background
+    │   ├── animations.js                 GSAP scroll animations
+    │   ├── observer.js                    IntersectionObserver reveal utility
+    │   ├── include.js                      HTML partial fetcher
+    │   ├── forms.js                         Client-side form validation
+    │   ├── search.js                         Client-side site search
+    │   ├── seo.js                            JSON-LD schema injection
+    │   ├── carousel.js                        Swiper.js setup
+    │   ├── brands.js                           Partner logo marquee
+    │   ├── diagnosis.js                        Diagnosis Center engine
+    │   ├── estimator.js                         Estimator engine
+    │   ├── tracker.js                            Repair tracker dashboard engine
+    │   ├── showcase.js                           Before/after showcase engine
+    │   └── utils.js                               Shared helpers
     │
-    ├── components/               HTML partials loaded via include.js
+    ├── components/                  HTML partials loaded via include.js
     │   ├── header.html
     │   ├── footer.html
     │   ├── cta.html
@@ -158,12 +185,12 @@ robuzta-repair-services/
     │   └── newsletter.html
     │
     ├── images/
-    │   └── partners/             Partner/brand SVG logos
+    │   └── partners/                Partner/brand SVG logos
     │
     ├── icons/
     │   └── favicon.svg
     │
-    └── vendor/                   Local fallbacks for CDN libraries
+    └── vendor/                       Local fallbacks for CDN libraries
         ├── gsap.min.js
         ├── three.min.js
         ├── lenis.min.js
@@ -175,12 +202,16 @@ robuzta-repair-services/
 
 | Page | File | Purpose |
 |---|---|---|
-| Homepage | `index.html` | Hero, device selector, 4-step workflow, pricing calculator |
-| Services | `services.html` | Full repair capability catalogue with B2B AMC section |
-| About | `about.html` | Lab story, core principles, growth timeline, team |
+| Homepage | `index.html` | Hero, device categories, workflow overview |
+| Services | `services.html` | Full repair capability catalogue |
+| About | `about.html` | Company story, values, timeline, founder |
 | Blog | `blog.html` | Device care & diagnostics articles index |
-| Contact | `contact.html` | Repair booking form, South Bopal map, contact info |
-| Privacy Policy | `privacy-policy.html` | DPDP Act 2023-aligned policy |
+| Diagnosis Center | `diagnosis.html` | Guided, symptom-based issue diagnosis |
+| Estimator | `estimator.html` | Multi-step repair cost & turnaround estimator |
+| Tracker | `tracker.html` | Live repair status dashboard |
+| Showcase | `showcase.html` | Before/after repair case studies |
+| Contact | `contact.html` | Booking form, map, contact info |
+| Privacy Policy | `privacy-policy.html` | DPDP Act 2023–aligned policy |
 | Terms & Conditions | `terms.html` | Legal terms |
 | 404 | `404.html` | Custom not-found page |
 
@@ -189,11 +220,11 @@ robuzta-repair-services/
 The site has no build step and no dependencies to install — clone it and serve the folder with any static file server.
 
 ```bash
-git clone https://github.com/Yaksh77/robuzta-repair-services.git
-cd robuzta-repair-services
+git clone https://github.com/Yaksh77/sanuma-dev-contest-submission.git
+cd sanuma-dev-contest-submission
 
 # Python
-python -m http.server 8000
+python -m http.server 8080
 
 # Node.js
 npx serve .
@@ -201,22 +232,17 @@ npx serve .
 # or open with VS Code "Live Server" extension
 ```
 
-Then visit `http://localhost:8000`.
+Then visit `http://localhost:8080`.
 
 > **Important:** serve the project over HTTP — opening `index.html` directly via `file://` will break ES6 module imports and the component-include fetch calls.
 
 ## Design System
 
-All design tokens (colours, spacing scale, typography, radii, shadows) live in `assets/css/variables.css`, with light/dark overrides in `assets/css/themes.css`. Component-level styles (`buttons.css`, `cards.css`, `forms.css`, `header.css`, `footer.css`) consume those tokens exclusively, so the entire visual language can be re-themed by editing a single file.
-
-**Brand palette:**
-- **Brand Green:** `#0F9D58` / `#00C97A` (accent, buttons, highlights)
-- **Background Dark:** `#0A0A0A` (dark mode base)
-- **Background Light:** `#FFFFFF` (light mode base)
+All design tokens (colours, spacing scale, typography, radii, shadows) live in `assets/css/variables.css`, with light/dark overrides in `assets/css/themes.css`. Component-level styles consume those tokens exclusively, so the entire visual language can be re-themed by editing a single file.
 
 ## Performance
 
-- Third-party libraries loaded from CDN with automatic local `assets/vendor` fallback via `onerror` handlers, so the site never breaks on a flaky connection
+- Third-party libraries loaded from CDN with automatic local `assets/vendor` fallback via `onerror` handlers
 - Images use `loading="lazy"` outside the first viewport
 - Three.js hero is gated behind device capability checks (`deviceMemory`, `hardwareConcurrency`) with a CSS-only fallback for constrained devices
 - Lenis smooth scroll initialised only after DOM ready to avoid blocking first paint
@@ -226,9 +252,9 @@ All design tokens (colours, spacing scale, typography, radii, shadows) live in `
 
 - Unique `<title>` and `<meta name="description">` per page
 - Open Graph metadata on primary pages
-- JSON-LD **LocalBusiness** schema injected dynamically via `seo.js` with South Bopal coordinates, phone, email, opening hours
-- `robots.txt` and `sitemap.xml` (7 active URLs) included at the project root
-- Semantic breadcrumb navigation on all interior pages
+- JSON-LD `LocalBusiness` schema injected dynamically via `seo.js` — **update the placeholder address/phone/geo per Known Issues**
+- `robots.txt` and `sitemap.xml` at the project root
+- Semantic breadcrumb navigation on interior pages
 
 ## Accessibility
 
@@ -253,34 +279,12 @@ As required by the contest guidelines:
 | Email | chudasamayaksh77@gmail.com |
 | Live Website URL | https://sanuma-dev-contest-submission.vercel.app/ |
 | GitHub Repository | https://github.com/Yaksh77/sanuma-dev-contest-submission |
-| Submission Deadline | 10th July 2026, 7:00 PM IST |
+| Submission Deadline | 12th July 2026, 7:00 PM IST (extended per direct feedback) |
 
 ## Author
 
 Built by **[Yaksh77](https://github.com/Yaksh77)** for the Sanuma India Pvt. Ltd. Website Development Contest.
-- Skip-to-content link on every page
-- Visible focus states on all interactive elements
-- ARIA labels, roles, and live regions throughout
-- Custom focus trap in the mobile navigation overlay
-- Colour palette verified for high-contrast readability in both themes
-- Respects the `prefers-reduced-motion` media query
 
-## Browser Support
+## License
 
-Tested on current versions of Chrome, Firefox, Edge, and Safari (desktop and mobile). ES6 module support is required, which covers all evergreen browsers.
-
-## Submission Details
-
-As required by the contest guidelines:
-
-| Field | Value |
-|---|---|
-| Candidate Name | Yaksh Chudasama |
-| Email | chudasamayaksh77@gmail.com |
-| Live Website URL | https://sanuma-dev-contest-submission.vercel.app/ |
-| GitHub Repository | https://github.com/Yaksh77/sanuma-dev-contest-submission |
-| Submission Deadline | 10th July 2026, 7:00 PM IST |
-
-## Author
-
-Built by **[Yaksh77](https://github.com/Yaksh77)** for the Sanuma India Pvt. Ltd. Website Development Contest.
+This project was built solely as a contest submission for Sanuma India Pvt. Ltd. and is shared for evaluation purposes.
